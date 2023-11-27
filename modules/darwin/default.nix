@@ -15,6 +15,7 @@
     ffmpeg
     fswatch
     gh
+    gimp
     git
     git-filter-repo
     gnupg
