@@ -26,6 +26,7 @@
     k9s
     kubectl
     lf
+    libreoffice-bin
     mariadb
     mpv
     neovim
@@ -37,6 +38,7 @@
     protoc-gen-go-grpc
     rustc
     tmux
+    transmission
     tree
     yt-dlp
   ];
