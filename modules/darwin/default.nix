@@ -31,8 +31,7 @@
     mpv
     neovim
     nodejs_21
-    pass
-    passExtensions.pass-otp
+    (pass.withExtensions (exts: [ exts.pass-otp ]))
     protobuf
     protoc-gen-go
     protoc-gen-go-grpc
