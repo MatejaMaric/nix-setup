@@ -7,30 +7,30 @@
   '';
   users.users.mateja.home = "/Users/mateja";
   environment.systemPackages = with pkgs; [
-    # awscli
-    # buf
-    # cmake
+    awscli
+    buf
+    cmake
     # coreutils
-    # fswatch
+    fswatch
     gh
     # git
     # git-filter-repo
     # go
-    # grpcurl
+    grpcurl
     # haskell-language-server
     # jq
     # k9s
     # kubectl
     lf
     # mariadb
-    # mpv
+    mpv
     # neovim
     # nodejs_21
     # pass
     # passExtensions.pass-otp
     # protoc-gen-go
     # protoc-gen-go-grpc
-    # rustc
+    rustc
     # tmux
   ];
   system.keyboard.enableKeyMapping = true;
