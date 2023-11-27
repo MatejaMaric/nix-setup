@@ -15,23 +15,24 @@
     gh
     # git
     # git-filter-repo
-    # go
+    go
     grpcurl
     # haskell-language-server
-    # jq
+    jq
     # k9s
     # kubectl
     lf
-    # mariadb
+    mariadb
     mpv
     # neovim
-    # nodejs_21
-    # pass
-    # passExtensions.pass-otp
-    # protoc-gen-go
-    # protoc-gen-go-grpc
+    nodejs_21
+    pass
+    passExtensions.pass-otp
+    protoc-gen-go
+    protoc-gen-go-grpc
     rustc
     # tmux
+    yt-dlp
   ];
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
