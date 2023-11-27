@@ -30,6 +30,7 @@
     nodejs_21
     pass
     passExtensions.pass-otp
+    protobuf
     protoc-gen-go
     protoc-gen-go-grpc
     rustc
