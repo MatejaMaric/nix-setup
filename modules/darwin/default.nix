@@ -7,6 +7,7 @@
   '';
   users.users.mateja.home = "/Users/mateja";
   environment.systemPackages = with pkgs; [
+    (pass.withExtensions (exts: [ exts.pass-otp ]))
     awscli
     buf
     cmake
@@ -22,6 +23,7 @@
     go
     grpcurl
     haskell-language-server
+    iterm2
     jq
     k9s
     kubectl
@@ -31,7 +33,6 @@
     mpv
     neovim
     nodejs_21
-    (pass.withExtensions (exts: [ exts.pass-otp ]))
     protobuf
     protoc-gen-go
     protoc-gen-go-grpc
