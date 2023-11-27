@@ -11,10 +11,12 @@
     buf
     cmake
     coreutils
+    ffmpeg
     fswatch
     gh
     git
     git-filter-repo
+    gnupg
     go
     grpcurl
     haskell-language-server
