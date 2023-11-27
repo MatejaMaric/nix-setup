@@ -5,32 +5,33 @@
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
+  users.users.mateja.home = "/Users/mateja";
   environment.systemPackages = with pkgs; [
-    awscli
-    buf
-    cmake
-    coreutils
-    fswatch
+    # awscli
+    # buf
+    # cmake
+    # coreutils
+    # fswatch
     gh
-    git-filter-repo
-    go
-    grpcurl
-    haskell-language-server
-    jq
-    k9s
-    kubectl
-    mariadb
-    mpv
-    neovim
-    nodejs_21
-    openvpn
-    pass
-    passExtensions.pass-otp
-    protoc-gen-go
-    protoc-gen-go-grpc
-    ranger
-    rustc
-    tmux
+    # git
+    # git-filter-repo
+    # go
+    # grpcurl
+    # haskell-language-server
+    # jq
+    # k9s
+    # kubectl
+    lf
+    # mariadb
+    # mpv
+    # neovim
+    # nodejs_21
+    # pass
+    # passExtensions.pass-otp
+    # protoc-gen-go
+    # protoc-gen-go-grpc
+    # rustc
+    # tmux
   ];
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;

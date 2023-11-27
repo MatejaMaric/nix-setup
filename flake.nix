@@ -10,7 +10,7 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = inputs: {
-    darwinConfigurations.Matejas-MacBook-Pro.local = inputs.darwin.lib.darwinSystem {
+    darwinConfigurations.Matejas-MacBook-Pro = inputs.darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import inputs.nixpkgs {
         system = "aarch64-darwin";
