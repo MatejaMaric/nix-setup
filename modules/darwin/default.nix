@@ -10,28 +10,29 @@
     awscli
     buf
     cmake
-    # coreutils
+    coreutils
     fswatch
     gh
-    # git
-    # git-filter-repo
+    git
+    git-filter-repo
     go
     grpcurl
-    # haskell-language-server
+    haskell-language-server
     jq
-    # k9s
-    # kubectl
+    k9s
+    kubectl
     lf
     mariadb
     mpv
-    # neovim
+    neovim
     nodejs_21
     pass
     passExtensions.pass-otp
     protoc-gen-go
     protoc-gen-go-grpc
     rustc
-    # tmux
+    tmux
+    tree
     yt-dlp
   ];
   system.keyboard.enableKeyMapping = true;
