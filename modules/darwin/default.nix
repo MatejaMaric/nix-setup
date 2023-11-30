@@ -38,7 +38,7 @@
     protoc-gen-go-grpc
     rustc
     tmux
-    transmission
+    transmission-gtk
     tree
     yt-dlp
   ];
