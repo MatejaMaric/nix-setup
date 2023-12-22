@@ -12,7 +12,6 @@
     buf
     cmake
     coreutils
-    darktable
     ffmpeg
     fswatch
     gh
