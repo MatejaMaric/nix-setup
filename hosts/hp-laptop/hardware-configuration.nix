@@ -4,23 +4,28 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ ];
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "vmd" "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/04355a8a-0d52-467f-a6e0-96016c1d252c";
+    { device = "/dev/disk/by-uuid/e5987f8d-6a5a-484d-88f0-e17410bd5bff";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-c10f5698-7a98-4deb-8a01-c9578057d834".device = "/dev/disk/by-uuid/c10f5698-7a98-4deb-8a01-c9578057d834";
-
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/AB06-4630";
+    { device = "/dev/disk/by-uuid/90A4-741D";
       fsType = "vfat";
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/6cca1cd8-bfc2-4188-8dee-b0601a00dd03";
+      fsType = "ext4";
     };
 
   swapDevices = [ ];
@@ -30,8 +35,9 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s3.useDHCP = lib.mkDefault true;
+  # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  virtualisation.virtualbox.guest.enable = true;
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
