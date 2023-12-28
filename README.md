@@ -27,3 +27,13 @@ This command is all you need:
 ```bash
 sudo nixos-rebuild switch --flake ~/nix-setup/.#
 ```
+
+## How to update packages:
+
+You can update the flake using this command, which is going to update the flake lock file:
+
+```bash
+nix flake update
+```
+
+After than you can update the system itself by switching into the flake with `nixos-rebuild switch` or `darwin-rebuild switch` depending on the platform you use.
