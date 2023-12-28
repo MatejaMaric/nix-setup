@@ -78,14 +78,21 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    (pass.withExtensions (exts: [ exts.pass-otp ]))
+    darktable
     firefox
+    gimp
     git
     go
     htop
+    lf
+    libreoffice
     neovim
     pinentry
+    texliveFull
     thunderbird
     tmux
+    tree
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
