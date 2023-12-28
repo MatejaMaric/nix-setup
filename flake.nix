@@ -23,6 +23,6 @@
     hpLaptopSetup = import ./hosts/hp-laptop;
   in {
     darwinConfigurations.Matejas-MacBook-Pro = macbookSetup inputs;
-    nixosConfigurations.hp250g8 = hpLaptopSetup inputs;
+    nixosConfigurations.hp-laptop = hpLaptopSetup inputs;
   };
 }

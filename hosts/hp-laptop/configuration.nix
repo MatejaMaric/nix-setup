@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "hp250g8"; # Define your hostname.
+  networking.hostName = "hp-laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -83,6 +83,7 @@
     go
     htop
     neovim
+    pinentry
     thunderbird
     tmux
   ];
