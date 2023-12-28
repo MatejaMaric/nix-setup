@@ -20,7 +20,9 @@
   outputs = inputs:
   let
     macbookSetup = import ./hosts/macos;
+    hpLaptopSetup = import ./hosts/hp-laptop;
   in {
     darwinConfigurations.Matejas-MacBook-Pro = macbookSetup inputs;
+    nixosConfigurations.nixos = hpLaptopSetup inputs;
   };
 }

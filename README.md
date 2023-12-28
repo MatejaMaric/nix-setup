@@ -19,3 +19,11 @@ Every time you change something you can just use this command, just don't forget
 ```bash
 darwin-rebuild switch --flake ~/nix-setup/.#
 ```
+
+### NixOS:
+
+This command is all you need:
+
+```bash
+sudo nixos-rebuild switch --flake ~/nix-setup/.#
+```
