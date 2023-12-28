@@ -83,6 +83,7 @@
     firefox
     gimp
     git
+    gnumake
     go
     htop
     lf
