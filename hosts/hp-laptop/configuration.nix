@@ -94,6 +94,7 @@
     thunderbird
     tmux
     tree
+    unzip
     wget
     wl-clipboard
     zip
