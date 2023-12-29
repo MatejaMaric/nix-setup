@@ -94,7 +94,9 @@
     thunderbird
     tmux
     tree
+    wget
     wl-clipboard
+    zip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
