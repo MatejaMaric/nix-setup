@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -80,6 +80,7 @@
   environment.systemPackages = with pkgs; [
     (pass.withExtensions (exts: [ exts.pass-otp ]))
     darktable
+    discord
     firefox
     gimp
     git
@@ -99,11 +100,6 @@
     wl-clipboard
     zip
   ];
-
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "discord"
-    ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
