@@ -37,3 +37,30 @@ nix flake update
 ```
 
 After than you can update the system itself by switching into the flake with `nixos-rebuild switch` or `darwin-rebuild switch` depending on the platform you use.
+
+## How to optimise storage:
+
+List all of the available generations:
+
+```bash
+sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
+```
+
+Remove all but the current generation:
+
+```bash
+sudo nix-collect-garbage -d
+```
+
+Garbage collect unneeded entires:
+
+```bash
+nix-store --gc
+```
+
+Optimise the store by manually running the command (potentially long operation):
+
+```bash
+sudo nix-store --optimise
+```
+For more checkout the [documentation](https://nixos.wiki/wiki/Storage_optimization).
