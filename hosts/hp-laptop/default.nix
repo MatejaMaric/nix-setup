@@ -1,4 +1,4 @@
-{nixpkgs, home-manager, ...}: nixpkgs.lib.nixosSystem {
+{nixpkgs, home-manager, nixos-hardware, ...}: nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
   pkgs = import nixpkgs {
     system = "x86_64-linux";
@@ -8,5 +8,8 @@
   };
   modules = [
     ./configuration.nix
+    nixos-hardware.nixosModules.common-cpu-intel
+    nixos-hardware.nixosModules.common-pc-laptop
+    nixos-hardware.nixosModules.common-pc-laptop-ssd
   ];
 }
