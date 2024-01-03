@@ -1,10 +1,17 @@
-{nixpkgs, home-manager, nixos-hardware, ...}: nixpkgs.lib.nixosSystem {
+{nixpkgs, nixpkgs-unstable, home-manager, nixos-hardware, ...}:
+let
   system = "x86_64-linux";
-  pkgs = import nixpkgs {
-    system = "x86_64-linux";
+  nixpkgsConfig = {
+    inherit system;
     config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
       "discord"
     ];
+  };
+in nixpkgs.lib.nixosSystem {
+  inherit system;
+  pkgs = import nixpkgs nixpkgsConfig;
+  specialArgs = {
+    pkgs-unstable = import nixpkgs-unstable nixpkgsConfig;
   };
   modules = [
     ./configuration.nix

@@ -3,7 +3,15 @@
 
   inputs = {
     nixpkgs = {
-      url = "github:/nixos/nixpkgs/nixpkgs-unstable";
+      url = "github:/NixOS/nixpkgs/nixos-23.11";
+    };
+
+    nixpkgs-unstable = {
+      url = "github:/NixOS/nixpkgs/nixpkgs-unstable";
+    };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
     };
 
     home-manager = {
@@ -14,10 +22,6 @@
     darwin = {
       url = "github:/lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixos-hardware = {
-      url = "github:NixOS/nixos-hardware/master";
     };
   };
 
