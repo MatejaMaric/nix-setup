@@ -15,7 +15,6 @@ in nixpkgs.lib.nixosSystem {
   };
   modules = [
     ./configuration.nix
-    nixos-hardware.nixosModules.common-cpu-intel
     nixos-hardware.nixosModules.common-pc-laptop
     nixos-hardware.nixosModules.common-pc-laptop-ssd
   ];

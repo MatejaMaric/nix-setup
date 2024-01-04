@@ -14,7 +14,22 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.initrd.kernelModules = [ "i915" ];
   boot.kernelParams = [ "i915.force_probe=9a49" ];
+
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-vaapi-driver
+      libvdpau-va-gl
+      vaapiVdpau
+    ];
+  };
+
+  environment.variables = {
+    VDPAU_DRIVER = "va_gl";
+  };
 
   networking.hostName = "hp-laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
