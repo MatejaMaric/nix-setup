@@ -103,15 +103,16 @@
     gimp
     git
     gnumake
-    pkgs-unstable.go
     htop
     lf
     libreoffice
     neovim
     pinentry
+    pkgs-unstable.go
     texliveFull
     thunderbird
     tmux
+    transmission-gtk
     tree
     unzip
     wget
