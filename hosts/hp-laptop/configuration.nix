@@ -87,10 +87,13 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.mateja = {
-    isNormalUser = true;
-    description = "Mateja";
-    extraGroups = [ "networkmanager" "wheel" ];
+  users = {
+    users.mateja = {
+      isNormalUser = true;
+      description = "Mateja";
+      extraGroups = [ "networkmanager" "wheel" ];
+    };
+    extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -127,6 +130,8 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  virtualisation.virtualbox.host.enable = true;
 
   # List services that you want to enable:
 
