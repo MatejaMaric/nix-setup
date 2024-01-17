@@ -22,6 +22,7 @@
     go
     grpcurl
     haskell-language-server
+    httpie
     iterm2
     jq
     k9s
@@ -38,6 +39,7 @@
     rustc
     tmux
     tree
+    wget
     yt-dlp
   ];
   system.keyboard.enableKeyMapping = true;

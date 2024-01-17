@@ -107,6 +107,7 @@
     git
     gnumake
     htop
+    httpie
     lf
     libreoffice
     neovim
