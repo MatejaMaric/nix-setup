@@ -12,6 +12,7 @@
     buf
     cmake
     coreutils
+    elmPackages.elm
     ffmpeg
     fswatch
     gh

@@ -102,6 +102,7 @@
     (pass.withExtensions (exts: [ exts.pass-otp ]))
     darktable
     discord
+    elmPackages.elm
     firefox
     gimp
     git
