@@ -3,8 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, pkgs-unstable, ... }:
-
-{
+let
+  defaultPkgs = import ../../common/packages;
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -99,31 +100,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    (pass.withExtensions (exts: [ exts.pass-otp ]))
     darktable
     discord
-    elmPackages.elm
-    firefox
-    gimp
-    git
-    gnumake
-    htop
-    httpie
-    lf
     libreoffice
-    neovim
     pinentry
-    pkgs-unstable.go
     texliveFull
-    thunderbird
-    tmux
-    transmission-gtk
-    tree
-    unzip
-    wget
     wl-clipboard
-    zip
-  ];
+  ] ++ (defaultPkgs pkgs pkgs-unstable);
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

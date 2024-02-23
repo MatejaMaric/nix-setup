@@ -1,4 +1,7 @@
-{pkgs, ...}: {
+{pkgs, pkgs-unstable, ...}:
+let
+  defaultPkgs = import ../../common/packages;
+in {
   programs.bash.enable = true;
   environment.shells = with pkgs; [ bash zsh ];
   environment.loginShell = pkgs.bash;
@@ -7,42 +10,15 @@
   '';
   users.users.mateja.home = "/Users/mateja";
   environment.systemPackages = with pkgs; [
-    (pass.withExtensions (exts: [ exts.pass-otp ]))
     awscli
-    buf
-    cmake
     coreutils
-    elmPackages.elm
-    ffmpeg
-    fswatch
-    gh
-    gimp
-    git
-    git-filter-repo
     gnupg
-    go
-    grpcurl
-    haskell-language-server
-    httpie
     iterm2
-    jq
     k9s
     kubectl
-    lf
     libreoffice-bin
     mariadb
-    mpv
-    neovim
-    nodejs_21
-    protobuf
-    protoc-gen-go
-    protoc-gen-go-grpc
-    rustc
-    tmux
-    tree
-    wget
-    yt-dlp
-  ];
+  ] ++ (defaultPkgs pkgs pkgs-unstable);
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
   services.nix-daemon.enable = true;

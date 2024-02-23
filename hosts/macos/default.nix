@@ -1,4 +1,4 @@
-{darwin, nixpkgs, home-manager, ...}:
+{darwin, nixpkgs, nixpkgs-unstable, home-manager, ...}:
 let
   system = "aarch64-darwin";
   nixpkgsConfig = {
@@ -7,6 +7,9 @@ let
 in darwin.lib.darwinSystem {
   inherit system;
   pkgs = import nixpkgs nixpkgsConfig;
+  specialArgs = {
+    pkgs-unstable = import nixpkgs-unstable nixpkgsConfig;
+  };
   modules = [
     ../../modules/darwin
     home-manager.darwinModules.home-manager {
