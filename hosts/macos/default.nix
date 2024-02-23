@@ -1,12 +1,15 @@
-{darwin, nixpkgs, home-manager, ...}: darwin.lib.darwinSystem {
+{darwin, nixpkgs, home-manager, ...}:
+let
   system = "aarch64-darwin";
-  pkgs = import nixpkgs {
-    system = "aarch64-darwin";
+  nixpkgsConfig = {
+    inherit system;
   };
+in darwin.lib.darwinSystem {
+  inherit system;
+  pkgs = import nixpkgs nixpkgsConfig;
   modules = [
     ../../modules/darwin
-    home-manager.darwinModules.home-manager
-    {
+    home-manager.darwinModules.home-manager {
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
