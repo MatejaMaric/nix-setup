@@ -4,7 +4,6 @@ pkgs: pkgs-unstable: with pkgs; [
   cmake
   elmPackages.elm
   ffmpeg
-  firefox
   fswatch
   gh
   gimp
@@ -25,7 +24,6 @@ pkgs: pkgs-unstable: with pkgs; [
   protoc-gen-go
   protoc-gen-go-grpc
   rustc
-  thunderbird
   tmux
   transmission-gtk
   tree

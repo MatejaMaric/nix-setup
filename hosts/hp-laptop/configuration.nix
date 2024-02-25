@@ -102,9 +102,11 @@ in {
   environment.systemPackages = with pkgs; [
     darktable
     discord
+    firefox
     libreoffice
     pinentry
     texliveFull
+    thunderbird
     wl-clipboard
   ] ++ (defaultPkgs pkgs pkgs-unstable);
 
