@@ -18,6 +18,7 @@ in {
     kubectl
     libreoffice-bin
     mariadb
+    stripe-cli
   ] ++ (defaultPkgs pkgs pkgs-unstable);
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
