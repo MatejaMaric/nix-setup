@@ -29,8 +29,10 @@
   let
     macbookSetup = import ./hosts/macos;
     hpLaptopSetup = import ./hosts/hp-laptop;
+    serverSetup = import ./hosts/server;
   in {
     darwinConfigurations.Matejas-MacBook-Pro = macbookSetup inputs;
     nixosConfigurations.hp-laptop = hpLaptopSetup inputs;
+    nixosConfigurations.server = serverSetup inputs;
   };
 }
