@@ -23,6 +23,9 @@ in nixpkgs.lib.nixosSystem {
           isNormalUser = true;
           description = "Mateja";
           extraGroups = [ "wheel" ];
+          openssh.authorizedKeys.keys = [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD6VEjJvZtjgC8dft65Y35WfzfFk0LwzYyM32QZc4PbAAhel0zPjlPyNJ1Px5UizlJ/3uslt+qpnHF5Nt3qK5VS4LgbMhA+5WNX6A4LeptwUilOecOvsVqRVpIBfGI/JhxpKnB31M5r0LfmQPTfKTeLoECP275Ct3J/jq3QmOccZL3HhHrl0qDZ1e3uT1SoOnToN62dw9jEKPthfCC6QAwdSTj3p5ULRd0K/rdNIBVmqsvMgirGlIqUHI5TofwgEB4VjqG4gvo/rADcchFqT/VCMVzwGBhTNvGH7h+kjgmvmjBC/p9Bh3Gw2X0Utw+KHFtgdjSAkslfT4UHYBowoOv2cOKtoszqr59xImw5c/Ia/FeqUsnPylcZr+YFnNLZY0VDLPCkM6uNARLJRbvjzlfsqvuqWXoenXEjbELKcMt6S69nwh8kA9NJHsBL/eIXqycj5s9cQ1xpiHye34ivrWwQxOswtUHI6FOxdTqkxlfoORrUq8z1mCOsfinMbbEDbjk= mateja@laptop"
+          ];
         };
       };
       environment.systemPackages = with pkgs; [
@@ -32,8 +35,18 @@ in nixpkgs.lib.nixosSystem {
         php83Extensions.mbstring
         php83Extensions.xml
         php83Extensions.bcmath
+        gitolite
+        opensmtpd
+        dovecot
+        rspamd
+        redis
       ];
-      services.openssh.enable = true;
+      services.openssh = {
+        enable = true;
+        settings.PasswordAuthentication = false;
+        settings.KbdInteractiveAuthentication = false;
+        settings.PermitRootLogin = "no";
+      };
       programs.gnupg.agent = {
         enable = true;
         enableSSHSupport = true;
