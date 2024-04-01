@@ -8,6 +8,18 @@
   time.timeZone = "Europe/Frankfurt";
   i18n.defaultLocale = "en_US.UTF-8";
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  virtualisation.vmVariant.virtualisation = {
+    graphics = false;
+    forwardPorts = [
+      {
+        from = "host";
+        host.port = 2222;
+        # host.address = "127.0.0.1";
+        guest.port = 50000;
+        # guest.address = "127.0.0.1";
+      }
+    ];
+  };
   users = {
     users.mateja = {
       isNormalUser = true;
@@ -16,6 +28,7 @@
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMZcuz2OPjpUGNPIE3/7UUwUIVBztmx478LFUahQaMm mail@matejamaric.com"
       ];
+      initialPassword = "test";
     };
   };
   environment.systemPackages = with pkgs; [
@@ -30,9 +43,11 @@
     dovecot
     rspamd
     redis
+    # (callPackage ./blog {})
   ];
   services.openssh = {
     enable = true;
+    ports = [ 50000 ];
     settings.PasswordAuthentication = false;
     settings.KbdInteractiveAuthentication = false;
     settings.PermitRootLogin = "no";
@@ -41,6 +56,7 @@
     enable = true;
     enableSSHSupport = true;
   };
+  networking.firewall.enable = false;
   networking.firewall.allowedTCPPorts = [ 50000 80 443 25 587 993 ];
   services.nginx.enable = true;
   services.nginx.virtualHosts = {

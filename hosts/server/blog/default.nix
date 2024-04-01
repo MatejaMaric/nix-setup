@@ -13,6 +13,7 @@ in pkgs.stdenv.mkDerivation {
     hugo
   '';
   installPhase = ''
-    cp -r public $out
+    mkdir -p $out/var/www/matejamaric.com
+    cp -r public $out/var/www/matejamaric.com
   '';
 }
