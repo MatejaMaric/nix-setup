@@ -37,6 +37,18 @@ nixos-rebuild build-vm --flake .#server
 ./result/bin/run-server-vm
 ```
 
+You can SSH into a VM using:
+
+```bash
+ssh -p 50000 localhost
+```
+
+You might want do delete the state of the previous VM instance:
+
+```bash
+rm server.qcow2
+```
+
 ## How to update packages:
 
 You can update the flake using this command, which is going to update the flake lock file:

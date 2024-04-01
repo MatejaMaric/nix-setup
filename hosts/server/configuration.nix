@@ -1,4 +1,5 @@
 { config, pkgs, ... }: {
+  system.stateVersion = "23.11"; # Don't touch this
   imports = [
     # ./hardware-configuration.nix
   ];
@@ -8,16 +9,13 @@
   time.timeZone = "Europe/Frankfurt";
   i18n.defaultLocale = "en_US.UTF-8";
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [ 50000 80 443 25 587 993 ];
   virtualisation.vmVariant.virtualisation = {
     graphics = false;
     forwardPorts = [
-      {
-        from = "host";
-        host.port = 2222;
-        # host.address = "127.0.0.1";
-        guest.port = 50000;
-        # guest.address = "127.0.0.1";
-      }
+      { from = "host"; host.port = 50000; guest.port = 50000; }
+      { from = "host"; host.port = 8080; guest.port = 80; }
     ];
   };
   users = {
@@ -28,10 +26,11 @@
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMZcuz2OPjpUGNPIE3/7UUwUIVBztmx478LFUahQaMm mail@matejamaric.com"
       ];
-      initialPassword = "test";
+      initialHashedPassword = "$y$j9T$WwsIfZwdnLm84jjd9Q9wV1$fhDEn.TrvZVSaV6VNKpH0RWiPKAvaOhR.3oCkDlETO7";
     };
   };
   environment.systemPackages = with pkgs; [
+    git
     tmux
     php83
     php83Packages.composer
@@ -56,18 +55,16 @@
     enable = true;
     enableSSHSupport = true;
   };
-  networking.firewall.enable = false;
-  networking.firewall.allowedTCPPorts = [ 50000 80 443 25 587 993 ];
   services.nginx.enable = true;
   services.nginx.virtualHosts = {
     "matejamaric.com" = {
       enableACME = true;
-      forceSSL = true;
+      addSSL = true; # forceSSL = true;
       root = "/var/www/matejamaric.com";
     };
     "mail.matejamaric.com" = {
       enableACME = true;
-      forceSSL = true;
+      addSSL = true; # forceSSL = true;
       root = "/var/www/mail.matejamaric.com";
     };
     # "git.matejamaric.com" = { ... };
@@ -101,5 +98,4 @@
       "pm.max_requests" = 500;
     };
   };
-  system.stateVersion = "23.11"; # Don't touch this
 }
