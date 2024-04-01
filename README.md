@@ -28,6 +28,15 @@ This command is all you need:
 sudo nixos-rebuild switch --flake ~/nix-setup/.#
 ```
 
+### Server VM (testing):
+
+Sadly, using this command you can build VMs only for Linux. Building VMs on MacOS (especially on M1) is to much of a hassle for me personally.
+
+```bash
+nixos-rebuild build-vm --flake .#server
+./result/bin/run-server-vm
+```
+
 ## How to update packages:
 
 You can update the flake using this command, which is going to update the flake lock file:
