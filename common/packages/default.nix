@@ -1,6 +1,7 @@
 pkgs: pkgs-unstable: with pkgs; [
   (pass.withExtensions (exts: [ exts.pass-otp ]))
   buf
+  cargo
   cmake
   elmPackages.elm
   ffmpeg
@@ -23,6 +24,9 @@ pkgs: pkgs-unstable: with pkgs; [
   protobuf
   protoc-gen-go
   protoc-gen-go-grpc
+  python3
+  python311Packages.pip
+  ripgrep
   rustc
   tmux
   transmission-gtk
