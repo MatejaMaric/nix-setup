@@ -42,7 +42,7 @@
     dovecot
     rspamd
     redis
-    (callPackage ./blog {})
+    matejasblog
   ];
   services.openssh = {
     enable = true;

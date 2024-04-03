@@ -40,6 +40,26 @@
         "type": "github"
       }
     },
+    "matejasblog": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1712180356,
+        "narHash": "sha256-yMwF250pxmfKvjT82VkgobL/O+h5yf8LyH2VvuV+qFM=",
+        "owner": "MatejaMaric",
+        "repo": "blog",
+        "rev": "e43c4de22e56da6b53b427a0d26dc8f11c3a1206",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MatejaMaric",
+        "repo": "blog",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1711352745,
@@ -92,6 +112,7 @@
       "inputs": {
         "darwin": "darwin",
         "home-manager": "home-manager",
+        "matejasblog": "matejasblog",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable"

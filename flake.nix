@@ -1,28 +1,20 @@
 {
-  description = "my first flake system config";
+  description = "Nix Flake for configuring systems I use";
 
   inputs = {
-    nixpkgs = {
-      url = "github:/NixOS/nixpkgs/nixos-23.11";
-    };
+    nixpkgs.url = "github:/NixOS/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:/NixOS/nixpkgs/nixpkgs-unstable";
 
-    nixpkgs-unstable = {
-      url = "github:/NixOS/nixpkgs/nixpkgs-unstable";
-    };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    nixos-hardware = {
-      url = "github:NixOS/nixos-hardware/master";
-    };
+    home-manager.url = "github:/nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager = {
-      url = "github:/nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    darwin.url = "github:/lnl7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    darwin = {
-      url = "github:/lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    matejasblog.url = "github:/MatejaMaric/blog";
+    matejasblog.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs:
