@@ -19,6 +19,7 @@ pkgs: pkgs-unstable: with pkgs; [
   lf
   mpv
   neovim
+  nerdfonts
   nodejs_21
   pkgs-unstable.go
   protobuf
