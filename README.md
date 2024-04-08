@@ -59,6 +59,14 @@ nix flake update
 
 After than you can update the system itself by switching into the flake with `nixos-rebuild switch` or `darwin-rebuild switch` depending on the platform you use.
 
+## How to update a single flake input:
+
+Here's an example for updating `matejasblog` package:
+
+```bash
+nix flake lock --update-input matejasblog
+```
+
 ## How to optimise storage:
 
 List all of the available generations:
