@@ -57,10 +57,13 @@
   };
   services.nginx.enable = true;
   services.nginx.virtualHosts = {
+    localhost = {
+      root = "${pkgs.matejasblog}/var/www/matejamaric.com/";
+    };
     "matejamaric.com" = {
       enableACME = true;
       addSSL = true; # forceSSL = true;
-      root = "/var/www/matejamaric.com";
+      root = "${pkgs.matejasblog}/var/www/matejamaric.com/";
     };
     "mail.matejamaric.com" = {
       enableACME = true;

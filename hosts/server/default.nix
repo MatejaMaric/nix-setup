@@ -3,9 +3,7 @@ let
   system = "x86_64-linux";
   nixpkgsConfig = {
     inherit system;
-    overlays = [
-      (final: prev: { inherit matejasblog; })
-    ];
+    overlays = [ matejasblog.overlays.default ];
   };
 in nixpkgs.lib.nixosSystem {
   inherit system;
