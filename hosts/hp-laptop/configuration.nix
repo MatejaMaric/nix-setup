@@ -98,9 +98,11 @@ in {
     discord
     firefox
     libreoffice
+    nheko
     pinentry
     texliveFull
     thunderbird
+    vesktop
     wl-clipboard
   ] ++ (defaultPkgs pkgs pkgs-unstable);
 
