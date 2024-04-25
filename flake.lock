@@ -48,11 +48,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1714082863,
-        "narHash": "sha256-WkC2glzoLkTWj59UMSfW2fT6vmaCawB2Phz/mxOl1WE=",
+        "lastModified": 1714083986,
+        "narHash": "sha256-jJdqS/MjO4F2fW3dPI4BzHkesdxOegsT00H2NLSPzOY=",
         "owner": "MatejaMaric",
         "repo": "blog",
-        "rev": "19e28f9b986607fb8d29c8b078ab88715a891bbb",
+        "rev": "fd0ef14eec58ea123324f06ab939a75d0f2aab45",
         "type": "github"
       },
       "original": {
