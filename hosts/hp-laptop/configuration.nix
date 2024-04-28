@@ -96,6 +96,7 @@ in {
   environment.systemPackages = with pkgs; [
     darktable
     discord
+    element-desktop
     firefox
     libreoffice
     nheko
