@@ -32,17 +32,13 @@
   environment.systemPackages = with pkgs; [
     git
     tmux
-    php83
-    php83Packages.composer
-    php83Extensions.mbstring
-    php83Extensions.xml
-    php83Extensions.bcmath
     gitolite
     opensmtpd
     dovecot
     rspamd
     redis
     matejasblog
+    yota-laravel
   ];
   services.openssh = {
     enable = true;
@@ -70,35 +66,15 @@
       addSSL = true; # forceSSL = true;
       root = "/var/www/mail.matejamaric.com";
     };
-    # "git.matejamaric.com" = { ... };
     "yota.yu1srs.org.rs" = {
       enableACME = true;
-      forceSSL = true;
-      root = "/var/www/yota.yu1srs.org.rs";
-      locations."~ \\.php$".extraConfig = ''
-        fastcgi_pass  unix:${config.services.phpfpm.pools.yotapool.socket};
-        fastcgi_index index.php;
-      '';
+      addSSL = true; # forceSSL = true;
     };
   };
   security.acme = {
     acceptTerms = true;
     defaults.email = "matejamaricz@gmail.com";
   };
-  services.mysql = {
-    enable = true;
-    package = pkgs.mariadb;
-  };
-  services.phpfpm.pools.yotapool = {
-    user = "nobody";
-    settings = {
-      "pm" = "dynamic";
-      "listen.owner" = config.services.nginx.user;
-      "pm.max_children" = 5;
-      "pm.start_servers" = 2;
-      "pm.min_spare_servers" = 1;
-      "pm.max_spare_servers" = 3;
-      "pm.max_requests" = 500;
-    };
-  };
+  yotaLaravel.enable = true;
+  yotaLaravel.domain = "yota.yu1srs.org.rs";
 }

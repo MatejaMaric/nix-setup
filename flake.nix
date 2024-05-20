@@ -15,6 +15,9 @@
 
     matejasblog.url = "github:/MatejaMaric/blog";
     matejasblog.inputs.nixpkgs.follows = "nixpkgs";
+
+    yotaLaravel.url = "github:/MatejaMaric/yota-laravel";
+    yotaLaravel.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs:

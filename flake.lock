@@ -137,7 +137,28 @@
         "matejasblog": "matejasblog",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "yotaLaravel": "yotaLaravel"
+      }
+    },
+    "yotaLaravel": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1715881660,
+        "narHash": "sha256-bukFa5PaDnbdNn/QQdkmFrKvnd70OSXWxjCkV2SG8I4=",
+        "owner": "MatejaMaric",
+        "repo": "yota-laravel",
+        "rev": "0ee30435fe94918836360022ddb3e24cfeed384a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MatejaMaric",
+        "repo": "yota-laravel",
+        "type": "github"
       }
     }
   },
