@@ -1,5 +1,6 @@
 pkgs: pkgs-unstable: with pkgs; [
   (pass.withExtensions (exts: [ exts.pass-otp ]))
+  alacritty
   buf
   cmake
   elmPackages.elm
