@@ -11,7 +11,7 @@ in darwin.lib.darwinSystem {
     pkgs-unstable = import nixpkgs-unstable nixpkgsConfig;
   };
   modules = [
-    ../../modules/darwin
+    ./configuration.nix
     home-manager.darwinModules.home-manager {
       home-manager = {
         useGlobalPkgs = true;
