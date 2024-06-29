@@ -12,12 +12,6 @@ in darwin.lib.darwinSystem {
   };
   modules = [
     ./configuration.nix
-    home-manager.darwinModules.home-manager {
-      home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        users.mateja.imports = [ ../../modules/home-manager ];
-      };
-    }
+    home-manager.darwinModules.home-manager
   ];
 }
