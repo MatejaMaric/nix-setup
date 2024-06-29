@@ -22,7 +22,7 @@ pkgs: pkgs-unstable: with pkgs; [
   neovim
   nerdfonts
   nil
-  nodejs_21
+  nodejs_22
   pkgs-unstable.go
   protobuf
   protoc-gen-go

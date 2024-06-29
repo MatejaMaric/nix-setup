@@ -52,11 +52,15 @@ in {
 
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    displayManager.gdm.debug = true;
+    displayManager.gdm = {
+      enable = true;
+      debug = true;
+    };
     desktopManager.gnome.enable = true;
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
     # libinput.enable = true; # Enable touchpad support (enabled default in most desktopManager).
   };
 
