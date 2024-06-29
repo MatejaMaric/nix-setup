@@ -14,14 +14,8 @@ in nixpkgs.lib.nixosSystem {
     pkgs-unstable = import nixpkgs-unstable nixpkgsConfig;
   };
   modules = [
+    home-manager.nixosModules.home-manager
     ./configuration.nix
-    (home-manager.nixosModules.home-manager {
-      home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        users.mateja.imports = [ ../../modules/home-manager ];
-      };
-    })
     nixos-hardware.nixosModules.common-pc-laptop
     nixos-hardware.nixosModules.common-pc-laptop-ssd
   ];

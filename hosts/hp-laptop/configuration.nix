@@ -91,6 +91,12 @@ in {
     extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.mateja.imports = [ ../../modules/home-manager ];
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
