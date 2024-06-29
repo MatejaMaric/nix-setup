@@ -11,7 +11,7 @@ in darwin.lib.darwinSystem {
     pkgs-unstable = import nixpkgs-unstable nixpkgsConfig;
   };
   modules = [
-    ./configuration.nix
     home-manager.darwinModules.home-manager
+    ./configuration.nix
   ];
 }
