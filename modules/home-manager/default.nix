@@ -3,13 +3,13 @@
   home.packages = [];
   home.sessionVariables = {
     EDITOR = "nvim";
-    PS1 = "\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ ";
   };
 
   programs = {
 
     bash = {
       enable = true;
+      sessionVariables.PS1 = "\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ ";
       shellAliases = {
         yta   = "yt-dlp --extract-audio -o '%(playlist_index)d-%(title)s.%(ext)s'";
         ytv   = "yt-dlp -o '%(playlist_index)d-%(title)s.%(ext)s'";
@@ -24,6 +24,7 @@
     alacritty = {
       enable = true;
       settings = {
+        env.TERM = "xterm-256color";
         font = {
           normal = {
             family = "DroidSansM Nerd Font";
@@ -38,6 +39,22 @@
           size = 12;
         };
       };
+    };
+
+    tmux = {
+      enable = true;
+
+      mouse = false;
+      keyMode = "vi";
+      baseIndex = 1;
+
+      # Neovim Stuff
+      escapeTime = 10;
+      terminal = "screen-256color";
+      extraConfig = ''
+        set-option -g focus-events on
+        set-option -sa terminal-overrides ',xterm-256color:RGB'
+      '';
     };
 
   };
