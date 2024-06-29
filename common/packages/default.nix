@@ -1,4 +1,5 @@
 pkgs: pkgs-unstable: with pkgs; [
+  (nerdfonts.override { fonts = [ "DroidSansMono" ]; })
   (pass.withExtensions (exts: [ exts.pass-otp ]))
   alacritty
   buf
@@ -20,7 +21,6 @@ pkgs: pkgs-unstable: with pkgs; [
   lunarvim
   mpv
   neovim
-  nerdfonts
   nil
   nodejs_22
   pkgs-unstable.go
