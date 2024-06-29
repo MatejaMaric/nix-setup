@@ -7,7 +7,7 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    home-manager.url = "github:/nix-community/home-manager";
+    home-manager.url = "github:/nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     darwin.url = "github:/lnl7/nix-darwin";
