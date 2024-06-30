@@ -9,13 +9,6 @@
 
     bash = {
       enable = true;
-      sessionVariables = {
-        # With Host
-        # PS1 = ''\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '';
-
-        # Without Host
-        PS1 = ''\[\e[92m\]\u\[\e[0m\]:\[\e[94m\]\W \[\e[0m\]\\$ '';
-      };
       shellAliases = {
         yta   = "yt-dlp --extract-audio -o '%(playlist_index)d-%(title)s.%(ext)s'";
         ytv   = "yt-dlp -o '%(playlist_index)d-%(title)s.%(ext)s'";
@@ -25,6 +18,12 @@
         ytv10 = "yt-dlp --write-auto-sub -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' -o '%(playlist_index)d-%(title)s.%(ext)s'";
         yts   = "mpv --ytdl-format='bestvideo[height<=360]+bestaudio'";
       };
+      initExtra = ''
+        # With host
+        # export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+        # Without host
+        export PS1='\[\e[92m\]\u\[\e[0m\]:\[\e[94m\]\W \[\e[0m\]\\$ '
+      '';
     };
 
     alacritty = {
