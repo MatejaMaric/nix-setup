@@ -1,4 +1,4 @@
-{pkgs, pkgs-unstable, ...}:
+{pkgs, pkgs-r2311, pkgs-unstable, ...}:
 let
   defaultPkgs = import ../../common/packages;
 in {
@@ -30,6 +30,7 @@ in {
     kubectl
     libreoffice-bin
     mariadb
+    pkgs-r2311.lunarvim
     stripe-cli
   ] ++ (defaultPkgs pkgs pkgs-unstable);
 

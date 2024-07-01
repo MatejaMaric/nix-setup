@@ -18,7 +18,6 @@ pkgs: pkgs-unstable: with pkgs; [
   httpie
   jq
   lf
-  pkgs-unstable.lunarvim
   mpv
   neovim
   nil
