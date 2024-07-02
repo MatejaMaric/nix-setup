@@ -30,9 +30,8 @@ in {
     kubectl
     libreoffice-bin
     mariadb
-    pkgs-r2311.lunarvim
     stripe-cli
-  ] ++ (defaultPkgs pkgs pkgs-unstable);
+  ] ++ (defaultPkgs { inherit pkgs pkgs-r2311 pkgs-unstable; });
 
   system.keyboard = {
     enableKeyMapping = true;

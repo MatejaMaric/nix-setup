@@ -1,4 +1,4 @@
-pkgs: pkgs-unstable: with pkgs; [
+{ pkgs, pkgs-r2311, pkgs-unstable }: with pkgs; [
   (nerdfonts.override { fonts = [ "DroidSansMono" ]; })
   (pass.withExtensions (exts: [ exts.pass-otp ]))
   alacritty
@@ -22,6 +22,7 @@ pkgs: pkgs-unstable: with pkgs; [
   neovim
   nil
   nodejs_22
+  pkgs-r2311.lunarvim
   pkgs-unstable.go
   protobuf
   protoc-gen-go

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-r2311, pkgs-unstable, ... }:
 let
   defaultPkgs = import ../../common/packages;
 in {
@@ -115,7 +115,7 @@ in {
     thunderbird
     vesktop
     wl-clipboard
-  ] ++ (defaultPkgs pkgs pkgs-unstable);
+  ] ++ (defaultPkgs { inherit pkgs pkgs-r2311 pkgs-unstable; });
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
