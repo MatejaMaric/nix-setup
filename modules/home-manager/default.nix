@@ -62,6 +62,32 @@
       '';
     };
 
+    git = {
+      enable = true;
+      userName = "Mateja";
+      userEmail = "mail@matejamaric.com";
+      signing = {
+        key = "8E2B38CBE4246E2B";
+        signByDefault = true;
+      };
+      extraConfig = {
+        init = {
+          defaultBranch = "main";
+        };
+        url = {
+          "git@git.ejobs.ro:" = {
+            insteadOf = "https://git.ejobs.ro/";
+          };
+        };
+        core = {
+          ignorecase = false;
+        };
+        rerere = {
+          enabled = true;
+        };
+      };
+    };
+
   };
 
 }
