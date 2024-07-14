@@ -14,7 +14,7 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/18b85006-4c8a-4629-9491-a963210c171d";
+    { device = "/dev/vg_base/lv_root";
       fsType = "ext4";
     };
 
@@ -24,17 +24,19 @@
     };
 
   fileSystems."/nix/store" =
-    { device = "/dev/disk/by-uuid/b71e45f5-3738-40af-a876-dce309f37b9d";
+    { device = "/dev/vg_base/lv_nix_store";
       fsType = "ext4";
+      neededForBoot = true;
+      options = [ "noatime" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/6ffff500-367c-4d6c-9331-5c8270eb0405";
+    { device = "/dev/vg_base/lv_home";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/d863a77d-f11a-49c2-a3ce-54eb62c804e5"; }
+    [ { device = "/dev/vg_base/lv_swap"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
