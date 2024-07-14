@@ -14,6 +14,7 @@ in {
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.luks.devices.encrypted_pv.device = "/dev/disk/by-uuid/cea539d6-57a2-401d-9d23-844d2099cddf";
 
   time.timeZone = "Europe/Belgrade";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -90,6 +91,9 @@ in {
     users.mateja = {
       isNormalUser = true;
       description = "Mateja";
+      home = "/home/mateja";
+      createHome = true;
+      initialHashedPassword = "$y$j9T$7Y49sohFcg3U6XxNq3p8o.$mxii.YiAu0KBEH3oCtxuFoDUJIM.pA4uKy0TWmvP0B1";
       extraGroups = [ "networkmanager" "wheel" ];
     };
     extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
