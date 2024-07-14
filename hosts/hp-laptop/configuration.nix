@@ -12,15 +12,27 @@ in {
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices.encrypted_pv.device = "/dev/disk/by-uuid/cea539d6-57a2-401d-9d23-844d2099cddf";
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    initrd = {
+      luks.devices = {
+        # encrypted_pv is a custom name I provided for the LVM physical volume
+        encrypted_pv = {
+          device = "/dev/disk/by-uuid/cea539d6-57a2-401d-9d23-844d2099cddf";
+          preLVM = true; # true by default
+          bypassWorkqueues = true; # Increases SSD performance (should be enabled for HDD)
+        };
+      };
+      kernelModules = [ "i915" ];
+    };
+    kernelParams = [ "i915.force_probe=9a49" ];
+  };
 
   time.timeZone = "Europe/Belgrade";
   i18n.defaultLocale = "en_US.UTF-8";
-
-  boot.initrd.kernelModules = [ "i915" ];
-  boot.kernelParams = [ "i915.force_probe=9a49" ];
 
   hardware.opengl = {
     enable = true;
