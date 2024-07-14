@@ -90,4 +90,16 @@
 
   };
 
+  dconf.settings = {
+    "org/gnome/desktop/input-sources" = {
+      xkb-options = ["caps:swapescape"];
+    };
+    "org/gnome/desktop/interface" = {
+      show-battery-percentage = true;
+    };
+    "org/gnome/desktop/background" = {
+      picture-uri = "file:///home/mateja/Pictures/spencer-davis-iD5WcvlNWZg-unsplash.jpg";
+    };
+  };
+
 }
