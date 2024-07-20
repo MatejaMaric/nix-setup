@@ -9,7 +9,6 @@ in {
       ./hardware-configuration.nix
     ];
 
-  # Bootloader.
   boot = {
     loader = {
       systemd-boot.enable = true;
@@ -26,7 +25,10 @@ in {
       };
       kernelModules = [ "i915" ];
     };
+    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
     kernelParams = [ "i915.force_probe=9a49" ];
+    supportedFilesystems = [ "zfs" ];
+    zfs.forceImportRoot = false;
   };
 
   time.timeZone = "Europe/Belgrade";
@@ -48,6 +50,7 @@ in {
 
   networking = {
     hostName = "hp-laptop";
+    hostId = "99d0e226";
     networkmanager.enable = true;
     firewall = {
       enable = true;
@@ -95,6 +98,10 @@ in {
     #media-session.enable = true;
   };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
