@@ -14,21 +14,12 @@ in {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    initrd = {
-      luks.devices = {
-        # encrypted_pv is a custom name I provided for the LVM physical volume
-        encrypted_pv = {
-          device = "/dev/disk/by-uuid/cea539d6-57a2-401d-9d23-844d2099cddf";
-          preLVM = true; # true by default
-          bypassWorkqueues = true; # Increases SSD performance (should be enabled for HDD)
-        };
-      };
-      kernelModules = [ "i915" ];
-    };
+    initrd.kernelModules = [ "i915" ];
     kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
     kernelParams = [ "i915.force_probe=9a49" ];
     supportedFilesystems = [ "zfs" ];
-    zfs.forceImportRoot = false;
+    # zfs.forceImportRoot = false;
+    zfs.extraPools = [ "rpool" ];
   };
 
   time.timeZone = "Europe/Belgrade";
@@ -108,7 +99,7 @@ in {
     users.mateja = {
       isNormalUser = true;
       description = "Mateja";
-      home = "/home/mateja";
+      home = "/home/mateja/";
       createHome = true;
       initialHashedPassword = "$y$j9T$7Y49sohFcg3U6XxNq3p8o.$mxii.YiAu0KBEH3oCtxuFoDUJIM.pA4uKy0TWmvP0B1";
       extraGroups = [ "networkmanager" "wheel" ];

@@ -100,6 +100,15 @@
     "org/gnome/desktop/background" = {
       picture-uri = "file:///home/mateja/Pictures/spencer-davis-iD5WcvlNWZg-unsplash.jpg";
     };
+    "org/gnome/shell" = {
+      favorite-apps = [
+        "firefox.desktop"
+        "Alacritty.desktop"
+        "org.gnome.Nautilus.desktop"
+        "thunderbird.desktop"
+        "startcenter.desktop"
+      ];
+    };
   };
 
 }
