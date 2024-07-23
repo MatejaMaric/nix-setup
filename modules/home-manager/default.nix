@@ -109,6 +109,17 @@
         "startcenter.desktop"
       ];
     };
+    "org/gnome/settings-daemon/plugins/power" = {
+      power-saver-profile-on-low-battery = false;
+      sleep-inactive-ac-type = "nothing";
+      sleep-inactive-battery-type = "nothing";
+    };
+    "org/gnome/desktop/screensaver" = {
+      lock-enabled = false;
+    };
+    "org/gnome/mutter" = {
+      dynamic-workspaces = true;
+    };
   };
 
 }
