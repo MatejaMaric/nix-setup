@@ -55,7 +55,7 @@
 
       # Neovim Stuff
       escapeTime = 10;
-      terminal = "screen-256color";
+      terminal = "xterm-256color";
       extraConfig = ''
         set-option -g focus-events on
         set-option -sa terminal-overrides ',xterm-256color:RGB'
