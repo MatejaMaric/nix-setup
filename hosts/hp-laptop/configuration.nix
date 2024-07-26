@@ -35,10 +35,6 @@ in {
     ];
   };
 
-  environment.variables = {
-    VDPAU_DRIVER = "va_gl";
-  };
-
   networking = {
     hostName = "hp-laptop";
     hostId = "99d0e226";
@@ -113,21 +109,30 @@ in {
     users.mateja.imports = [ ../../modules/home-manager ];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    darktable
-    discord
-    element-desktop
-    firefox
-    libreoffice
-    nheko
-    pinentry
-    texliveFull
-    thunderbird
-    vesktop
-    wl-clipboard
-  ] ++ (defaultPkgs { inherit pkgs pkgs-r2311 pkgs-unstable; });
+  environment = {
+    variables = {
+      VDPAU_DRIVER = "va_gl";
+    };
+    sessionVariables = {
+      EDITOR = "nvim";
+      XCURSOR_THEME = "Adwaita";
+      VDPAU_DRIVER = "va_gl";
+    };
+    systemPackages = with pkgs; [
+      darktable
+      discord
+      element-desktop
+      firefox
+      libreoffice
+      nheko
+      pinentry
+      texliveFull
+      thunderbird
+      vesktop
+      wl-clipboard
+    ] ++ (defaultPkgs { inherit pkgs pkgs-r2311 pkgs-unstable; });
+  };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
