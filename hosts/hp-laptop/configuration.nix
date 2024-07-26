@@ -100,7 +100,7 @@ in {
       initialHashedPassword = "$y$j9T$7Y49sohFcg3U6XxNq3p8o.$mxii.YiAu0KBEH3oCtxuFoDUJIM.pA4uKy0TWmvP0B1";
       extraGroups = [ "networkmanager" "wheel" ];
     };
-    extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+    extraGroups.vboxusers.members = [ "mateja" ];
   };
 
   home-manager = {
