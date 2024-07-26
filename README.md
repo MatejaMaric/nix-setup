@@ -57,7 +57,15 @@ You can update the flake using this command, which is going to update the flake 
 nix flake update
 ```
 
-After than you can update the system itself by switching into the flake with `nixos-rebuild switch` or `darwin-rebuild switch` depending on the platform you use.
+After than you can update the system itself by switching into the flake with
+`nixos-rebuild switch` or `darwin-rebuild switch` depending on the platform you
+use.
+
+You can also use this, if you are feeling too lazy to commit the changes yourself:
+
+```
+nix flake update --commit-lock-file
+```
 
 ## How to update a single flake input:
 
