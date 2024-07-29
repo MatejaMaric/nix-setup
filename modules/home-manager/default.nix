@@ -32,14 +32,14 @@
         env.TERM = "xterm-256color";
         font = {
           normal = {
-            family = "DroidSansM Nerd Font";
+            family = "CommitMono Nerd Font";
             style = "Regular";
           };
           bold = {
-            family = "DroidSansM Nerd Font";
+            family = "CommitMono Nerd Font";
           };
           italic = {
-            family = "DroidSansM Nerd Font";
+            family = "CommitMono Nerd Font";
           };
           size = 12;
         };

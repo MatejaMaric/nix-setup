@@ -1,5 +1,4 @@
 { pkgs, pkgs-r2311, pkgs-unstable }: with pkgs; [
-  (nerdfonts.override { fonts = [ "DroidSansMono" ]; })
   (pass.withExtensions (exts: [ exts.pass-otp ]))
   alacritty
   buf

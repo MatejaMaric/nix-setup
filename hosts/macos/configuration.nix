@@ -22,6 +22,7 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    (nerdfonts.override { fonts = [ "CommitMono" ]; })
     awscli
     coreutils
     gnupg

@@ -109,6 +109,10 @@ in {
     users.mateja.imports = [ ../../modules/home-manager ];
   };
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "CommitMono" ]; })
+  ];
+
   environment = {
     variables = {
       VDPAU_DRIVER = "va_gl";
