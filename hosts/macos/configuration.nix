@@ -21,8 +21,11 @@ in {
     users.mateja.imports = [ ../../modules/home-manager ];
   };
 
-  environment.systemPackages = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "CommitMono" ]; })
+  ];
+
+  environment.systemPackages = with pkgs; [
     awscli
     coreutils
     gnupg
