@@ -1,4 +1,4 @@
-{darwin, nixpkgs, nixpkgs-r2311, nixpkgs-unstable, home-manager, ...}:
+{darwin, nixpkgs, nixpkgs-r2311, nixpkgs-unstable, home-manager}:
 let
   system = "aarch64-darwin";
   nixpkgsConfig = {
