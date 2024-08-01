@@ -8,7 +8,6 @@
 
     nixpkgs-darwin.url = "github:/NixOS/nixpkgs/nixpkgs-24.05-darwin";
     nixpkgs-darwin-r2311.url = "github:/NixOS/nixpkgs/nixpkgs-23.11-darwin";
-    nixpkgs-darwin-unstable.url = "github:/NixOS/nixpkgs/nixpkgs-24.05-darwin";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
@@ -32,10 +31,9 @@
     serverSetup = import ./hosts/server;
   in {
     darwinConfigurations.Matejas-MacBook-Pro = macbookSetup {
-      inherit (inputs) darwin home-manager;
+      inherit (inputs) darwin nixpkgs-unstable home-manager;
       nixpkgs = inputs.nixpkgs-darwin;
       nixpkgs-r2311 = inputs.nixpkgs-darwin-r2311;
-      nixpkgs-unstable = inputs.nixpkgs-darwin-unstable;
     };
     nixosConfigurations.hp-laptop = hpLaptopSetup inputs;
     nixosConfigurations.server = serverSetup inputs;

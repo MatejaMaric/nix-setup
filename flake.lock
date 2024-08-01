@@ -147,22 +147,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-darwin-unstable": {
-      "locked": {
-        "lastModified": 1722460556,
-        "narHash": "sha256-icgowa4FsmHJ2lH7wGwF95e7fvm7IsSVkhn6yjmHXdA=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b87dfeec0dd13dd7bdea01877df48a8d7eb46091",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-24.05-darwin",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-r2311": {
       "locked": {
         "lastModified": 1720535198,
@@ -204,7 +188,6 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-darwin": "nixpkgs-darwin",
         "nixpkgs-darwin-r2311": "nixpkgs-darwin-r2311",
-        "nixpkgs-darwin-unstable": "nixpkgs-darwin-unstable",
         "nixpkgs-r2311": "nixpkgs-r2311",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "yotaLaravel": "yotaLaravel"
