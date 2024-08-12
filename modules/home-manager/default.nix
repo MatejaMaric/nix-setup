@@ -109,6 +109,12 @@
         "startcenter.desktop"
       ];
     };
+    "org/gnome/shell/weather" = {
+      automatic-location = true;
+    };
+    "org/gnome/GWeather4" = {
+      temperature-unit = "centigrade";
+    };
     "org/gnome/settings-daemon/plugins/power" = {
       power-saver-profile-on-low-battery = false;
       sleep-inactive-ac-type = "nothing";
