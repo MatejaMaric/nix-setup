@@ -126,6 +126,10 @@
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
     };
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
+    };
   };
 
 }
