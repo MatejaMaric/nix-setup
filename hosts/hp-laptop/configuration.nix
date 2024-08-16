@@ -57,7 +57,10 @@ in {
       enable = true;
       debug = true;
     };
-    desktopManager.gnome.enable = true;
+    desktopManager.gnome = {
+      enable = true;
+      debug = true;
+    };
     xkb = {
       layout = "us";
       variant = "";
