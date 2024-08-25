@@ -21,7 +21,7 @@ in {
       options snd-intel-dspcfg dsp_driver=1
     '';
     supportedFilesystems = [ "zfs" ];
-    # zfs.forceImportRoot = false;
+    zfs.forceImportRoot = false;
     zfs.extraPools = [ "rpool" ];
   };
 
@@ -53,6 +53,11 @@ in {
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  services.zfs.autoScrub = {
+    enable = true;
+    pools = [ "rpool" ];
+  };
 
   services.xserver = {
     enable = true;
