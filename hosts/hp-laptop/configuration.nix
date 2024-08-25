@@ -17,6 +17,9 @@ in {
     initrd.kernelModules = [ "i915" ];
     kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
     kernelParams = [ "i915.force_probe=9a49" ];
+    extraModprobeConfig = ''
+      options snd-intel-dspcfg dsp_driver=1
+    '';
     supportedFilesystems = [ "zfs" ];
     # zfs.forceImportRoot = false;
     zfs.extraPools = [ "rpool" ];
