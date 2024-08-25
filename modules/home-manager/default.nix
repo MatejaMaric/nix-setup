@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{lib, ...}: {
   home.stateVersion = "23.11";
   home.packages = [];
   home.sessionVariables = {
@@ -93,6 +93,11 @@
   dconf.settings = {
     "org/gnome/desktop/input-sources" = {
       xkb-options = ["caps:swapescape"];
+      sources = with lib.hm.gvariant; [
+        (mkTuple ["xkb" "us"])
+        (mkTuple ["xkb" "rs+latin"])
+        (mkTuple ["xkb" "rs+alternatequotes"])
+      ];
     };
     "org/gnome/desktop/interface" = {
       show-battery-percentage = true;
