@@ -21,6 +21,7 @@
   neovim
   nil
   nodejs_22
+  pciutils
   pkgs-r2311.lunarvim
   pkgs-unstable.go
   protobuf
