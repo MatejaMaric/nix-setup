@@ -1,6 +1,6 @@
 # See available options: man 5 configuration.nix
 # Open NixOS manual: nixos-help
-{ config, pkgs, pkgs-r2311, pkgs-unstable, ... }:
+{ config, lib, pkgs, pkgs-r2311, pkgs-unstable, ... }:
 let
   defaultPkgs = import ../../common/packages;
 in {
@@ -50,6 +50,10 @@ in {
     hosts = {
       # "127.0.0.1" = ["matejamaric.com" "mail.matejamaric.com" "yota.yu1srs.org.rs"];
     };
+  };
+
+  systemd.targets = {
+    network-online.enable = lib.mkForce false;
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
