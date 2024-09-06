@@ -150,6 +150,7 @@ in {
       discord
       element-desktop
       firefox
+      gnucash
       libreoffice
       nheko
       pinentry
