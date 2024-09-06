@@ -54,8 +54,14 @@ in {
     };
   };
 
-  systemd.targets = {
-    network-online.enable = lib.mkForce false;
+  systemd = {
+    services = {
+      "getty@tty1".enable = false;
+      "autovt@tty1".enable = false;
+    };
+    # targets = {
+    #   network-online.enable = lib.mkForce false;
+    # };
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
