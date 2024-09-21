@@ -7,6 +7,7 @@ in {
   imports =
     [
       ./hardware-configuration.nix
+      ./virt.nix
     ];
 
   boot = {
@@ -121,9 +122,8 @@ in {
       home = "/home/mateja";
       createHome = true;
       initialHashedPassword = "$y$j9T$7Y49sohFcg3U6XxNq3p8o.$mxii.YiAu0KBEH3oCtxuFoDUJIM.pA4uKy0TWmvP0B1";
-      extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+      extraGroups = [ "networkmanager" "wheel" ];
     };
-    extraGroups.vboxusers.members = [ "mateja" ];
   };
 
   home-manager = {
@@ -169,10 +169,6 @@ in {
     enable = true;
     enableSSHSupport = true;
   };
-
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
 
   services.openssh = {
     enable = true;
