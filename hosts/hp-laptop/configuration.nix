@@ -146,13 +146,14 @@ in {
       VDPAU_DRIVER = "va_gl";
     };
     systemPackages = with pkgs; [
+      # nheko
       darktable
       discord
       element-desktop
       firefox
+      fractal
       gnucash
       libreoffice
-      # nheko
       pinentry
       texliveFull
       thunderbird
