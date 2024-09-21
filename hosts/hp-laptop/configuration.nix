@@ -152,7 +152,7 @@ in {
       firefox
       gnucash
       libreoffice
-      nheko
+      # nheko
       pinentry
       texliveFull
       thunderbird
