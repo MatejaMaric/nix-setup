@@ -3,9 +3,14 @@ let
   system = "x86_64-linux";
   nixpkgsConfig = {
     inherit system;
-    config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
-      "discord"
-    ];
+    config = {
+      allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
+        "discord"
+      ];
+      permittedInsecurePackages = [
+        "olm-3.2.16"
+      ];
+    };
   };
 in nixpkgs.lib.nixosSystem {
   inherit system;
