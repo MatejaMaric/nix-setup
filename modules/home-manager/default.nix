@@ -110,6 +110,7 @@
         "firefox.desktop"
         "Alacritty.desktop"
         "org.gnome.Nautilus.desktop"
+        "gnucash.desktop"
         "thunderbird.desktop"
         "startcenter.desktop"
       ];
