@@ -43,6 +43,7 @@
           };
           size = 12;
         };
+        shell.program = "tmux";
       };
     };
 
