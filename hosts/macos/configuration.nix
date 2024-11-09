@@ -11,7 +11,6 @@ in {
   programs.bash.enable = true;
   environment = {
     shells = with pkgs; [ bash zsh ];
-    loginShell = pkgs.bash;
   };
 
   users.users.mateja.home = "/Users/mateja";
