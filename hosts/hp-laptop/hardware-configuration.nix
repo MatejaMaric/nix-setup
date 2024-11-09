@@ -13,30 +13,30 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "rpool/enc/root";
-      fsType = "zfs";
-    };
+  # fileSystems."/" =
+  #   { device = "rpool/enc/root";
+  #     fsType = "zfs";
+  #   };
 
-  fileSystems."/home" =
-    { device = "rpool/enc/home";
-      fsType = "zfs";
-    };
+  # fileSystems."/home" =
+  #   { device = "rpool/enc/home";
+  #     fsType = "zfs";
+  #   };
 
-  fileSystems."/nix" =
-    { device = "rpool/enc/nix";
-      fsType = "zfs";
-    };
+  # fileSystems."/nix" =
+  #   { device = "rpool/enc/nix";
+  #     fsType = "zfs";
+  #   };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/6088-7DDE";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
+  # fileSystems."/boot" =
+  #   { device = "/dev/disk/by-uuid/6088-7DDE";
+  #     fsType = "vfat";
+  #     options = [ "fmask=0022" "dmask=0022" ];
+  #   };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/f4936162-9b33-43ad-bc06-15c776d13733"; }
-    ];
+  # swapDevices =
+  #   [ { device = "/dev/disk/by-uuid/f4936162-9b33-43ad-bc06-15c776d13733"; }
+  #   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
