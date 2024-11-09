@@ -17,6 +17,9 @@
     home-manager.url = "github:/nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+
     matejasblog.url = "github:/MatejaMaric/blog";
     matejasblog.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -28,6 +31,7 @@
   let
     macbookSetup = import ./hosts/macos;
     hpLaptopSetup = import ./hosts/hp-laptop;
+    hpLaptopDiskoSetup = import ./hosts/hp-laptop/default-disko.nix;
     serverSetup = import ./hosts/server;
   in {
     darwinConfigurations.Matejas-MacBook-Pro = macbookSetup {
@@ -36,6 +40,7 @@
       nixpkgs-r2311 = inputs.nixpkgs-darwin-r2311;
     };
     nixosConfigurations.hp-laptop = hpLaptopSetup inputs;
+    nixosConfigurations.hp-laptop-disko = hpLaptopDiskoSetup inputs;
     nixosConfigurations.server = serverSetup inputs;
   };
 }
