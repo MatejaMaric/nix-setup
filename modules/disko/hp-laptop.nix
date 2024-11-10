@@ -1,7 +1,7 @@
 { disks ? [ "/dev/vda" ], mainPool ? "rpool", ... }: {
   disko.devices = {
 
-    disk.a = {
+    disk.main = {
       type = "disk";
       device = builtins.elemAt disks 0;
       content.type = "gpt";
