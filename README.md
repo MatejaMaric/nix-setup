@@ -31,7 +31,14 @@ sudo nixos-rebuild switch --flake ~/nix-setup/.#
 Or, if you want to reformat the entire hard drive using [disko-install](https://github.com/nix-community/disko/blob/master/docs/disko-install.md):
 
 ```bash
-sudo nix run 'github:nix-community/disko/latest#disko-install' -- --write-efi-boot-entries --flake github:MatejaMaric/nix-setup#thinkpad-t490 --disk main /dev/nvme0n1
+echo "changeme" > /tmp/secret.key
+sudo nix
+--extra-experimental-features nix-command \
+--extra-experimental-features flakes \
+run 'github:nix-community/disko/latest#disko-install' -- \
+--write-efi-boot-entries \
+--flake github:MatejaMaric/nix-setup#thinkpad-t490 \
+--disk main /dev/nvme0n1
 ```
 
 ### Server VM (testing):
