@@ -31,7 +31,7 @@
   let
     macbookSetup = import ./hosts/macos;
     hpLaptopSetup = import ./hosts/hp-laptop;
-    hpLaptopDiskoSetup = import ./hosts/hp-laptop/default-disko.nix;
+    thinkpadT490Setup = import ./hosts/thinkpad-t490;
     serverSetup = import ./hosts/server;
   in {
     darwinConfigurations.Matejas-MacBook-Pro = macbookSetup {
@@ -40,7 +40,7 @@
       nixpkgs-r2311 = inputs.nixpkgs-darwin-r2311;
     };
     nixosConfigurations.hp-laptop = hpLaptopSetup inputs;
-    nixosConfigurations.hp-laptop-disko = hpLaptopDiskoSetup inputs;
+    nixosConfigurations.thinkpad-t490 = thinkpadT490Setup inputs;
     nixosConfigurations.server = serverSetup inputs;
   };
 }

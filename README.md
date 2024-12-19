@@ -28,6 +28,12 @@ This command is all you need:
 sudo nixos-rebuild switch --flake ~/nix-setup/.#
 ```
 
+Or, if you want to reformat the entire hard drive using [disko-install](https://github.com/nix-community/disko/blob/master/docs/disko-install.md):
+
+```bash
+sudo nix run 'github:nix-community/disko/latest#disko-install' -- --write-efi-boot-entries --flake github:MatejaMaric/nix-setup#thinkpad-t490 --disk main /dev/nvme0n1
+```
+
 ### Server VM (testing):
 
 Sadly, using this command you can build VMs only for Linux. Building VMs on MacOS (especially on M1) is to much of a hassle for me personally.

@@ -42,8 +42,8 @@ in {
   };
 
   networking = {
-    hostName = "hp-laptop";
-    hostId = "99d0e226";
+    hostName = "thinkpad";
+    hostId = "30aec81d";
     networkmanager.enable = true;
     firewall = {
       enable = true;
