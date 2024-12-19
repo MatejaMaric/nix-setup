@@ -22,7 +22,7 @@ in nixpkgs.lib.nixosSystem {
   };
   modules = [
     disko.nixosModules.disko
-    ../../modules/disko/hp-laptop.nix
+    ../../modules/disko/thinkpad-t490.nix
     {
       _module.args.disks = [ "/dev/vda" ];
       _module.args.mainPool = "rpool";
