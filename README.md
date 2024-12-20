@@ -28,9 +28,10 @@ This command is all you need:
 sudo nixos-rebuild switch --flake ~/nix-setup/.#
 ```
 
-Or, if you want to reformat the entire hard drive using [disko-install](https://github.com/nix-community/disko/blob/master/docs/disko-install.md):
+Or, if you want to reformat the entire hard drive and install the system using [disko-install](https://github.com/nix-community/disko/blob/master/docs/disko-install.md):
 
 ```bash
+# password for full disk encryption
 echo "changeme" > /tmp/secret.key
 
 sudo nix \
@@ -39,6 +40,29 @@ run 'github:nix-community/disko/latest#disko-install' -- \
 --write-efi-boot-entries \
 --flake github:MatejaMaric/nix-setup#thinkpad-t490 \
 --disk main /dev/nvme0n1
+
+sudo umount -R /mnt
+
+sudo zpool export rpool
+```
+
+However, if you find that disko-install is having issues with RAM and therefor the OOM Killer, you can use this:
+
+```bash
+# password for full disk encryption
+echo "changeme" > /tmp/secret.key
+
+sudo nix \
+--experimental-features "nix-command flakes" \
+run github:nix-community/disko/latest -- \
+--mode destroy,format,mount \
+--flake github:MatejaMaric/nix-setup#thinkpad-t490
+
+sudo nixos-install --flake github:MatejaMaric/nix-setup#thinkpad-t490
+
+sudo umount -R /mnt
+
+sudo zpool export rpool
 ```
 
 ### Server VM (testing):
