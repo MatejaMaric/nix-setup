@@ -55,7 +55,10 @@
         };
         "enc/nix" = {
           type = "zfs_fs";
-          options.mountpoint = "legacy";
+          options = {
+            mountpoint = "legacy";
+            atime = "off";
+          };
           mountpoint = "/nix";
         };
         "enc/var" = {
