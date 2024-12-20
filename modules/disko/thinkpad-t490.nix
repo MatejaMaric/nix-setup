@@ -1,4 +1,4 @@
-{ disks ? [ "/dev/vda" ], mainPool ? "rpool", ... }: {
+{ disks ? [ "/dev/nvme0n1" ], mainPool ? "rpool", ... }: {
   disko.devices = {
 
     disk.main = {

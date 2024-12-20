@@ -24,7 +24,7 @@ in nixpkgs.lib.nixosSystem {
     disko.nixosModules.disko
     ../../modules/disko/thinkpad-t490.nix
     {
-      _module.args.disks = [ "/dev/vda" ];
+      _module.args.disks = [ "/dev/nvme0n1" ];
       _module.args.mainPool = "rpool";
     }
     home-manager.nixosModules.home-manager
