@@ -28,12 +28,13 @@
 
     zpool.${mainPool} = {
       type = "zpool";
-      # mode = "mirror";
       # Workaround: cannot import 'zroot': I/O error in disko tests
       options.cachefile = "none";
       rootFsOptions = {
         compression = "zstd";
       };
+      postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^${mainPool}@blank$' || zfs snapshot -r ${mainPool}@blank";
+
       datasets = {
         "enc" = {
           type = "zfs_fs";
