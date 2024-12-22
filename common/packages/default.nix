@@ -29,7 +29,7 @@
   protoc-gen-go-grpc
   rustc
   tmux
-  transmission-gtk
+  transmission_3-gtk
   tree
   unzip
   wget
