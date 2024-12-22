@@ -42,7 +42,7 @@ in {
   };
 
   networking = {
-    hostName = "thinkpad";
+    hostName = "thinkpad-t490";
     hostId = "30aec81d";
     networkmanager.enable = true;
     firewall = {
