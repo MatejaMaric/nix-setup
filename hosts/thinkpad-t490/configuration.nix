@@ -157,6 +157,7 @@ in {
       hdparm
       libreoffice
       pinentry
+      sanoid
       texliveFull
       thunderbird
       vesktop
