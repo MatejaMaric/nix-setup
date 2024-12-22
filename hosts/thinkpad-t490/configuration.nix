@@ -153,6 +153,7 @@ in {
       firefox
       fractal
       gnucash
+      hdparm
       libreoffice
       pinentry
       texliveFull
