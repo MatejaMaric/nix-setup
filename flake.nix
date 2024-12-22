@@ -2,11 +2,11 @@
   description = "Nix Flake for configuring systems I use";
 
   inputs = {
-    nixpkgs.url = "github:/NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:/NixOS/nixpkgs/nixos-24.11";
     nixpkgs-r2311.url = "github:/NixOS/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:/NixOS/nixpkgs/nixpkgs-unstable";
 
-    nixpkgs-darwin.url = "github:/NixOS/nixpkgs/nixpkgs-24.05-darwin";
+    nixpkgs-darwin.url = "github:/NixOS/nixpkgs/nixpkgs-24.11-darwin";
     nixpkgs-darwin-r2311.url = "github:/NixOS/nixpkgs/nixpkgs-23.11-darwin";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -14,7 +14,7 @@
     darwin.url = "github:/lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
-    home-manager.url = "github:/nix-community/home-manager/release-24.05";
+    home-manager.url = "github:/nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     disko.url = "github:nix-community/disko";
