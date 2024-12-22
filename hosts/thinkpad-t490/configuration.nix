@@ -8,6 +8,7 @@ in {
     [
       ./hardware-configuration.nix
       ../../common/modules/virt.nix
+      ../../common/modules/sanoid.nix
     ];
 
   boot = {
