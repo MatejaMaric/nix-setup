@@ -6,7 +6,6 @@ let
 in {
   imports =
     [
-      ./hardware-configuration.nix
       ../../common/modules/virt.nix
       ../../common/modules/sanoid.nix
     ];
@@ -16,16 +15,8 @@ in {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    initrd.kernelModules = [ "i915" ];
-    kernelParams = [ "i915.force_probe=9a49" ];
-    # extraModprobeConfig = ''
-    #   options snd-intel-dspcfg dsp_driver=1
-    #   blacklist snd_hda_intel
-    #   blacklist sof-audio-pci-intel-tgl
-    # '';
     supportedFilesystems = [ "zfs" ];
     zfs.forceImportRoot = false;
-    zfs.extraPools = [ "rpool" ];
   };
 
   time.timeZone = "Europe/Belgrade";
@@ -33,12 +24,12 @@ in {
 
   hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      intel-vaapi-driver
-      libvdpau-va-gl
-      vaapiVdpau
-    ];
+    # extraPackages = with pkgs; [
+    #   intel-media-driver
+    #   intel-vaapi-driver
+    #   libvdpau-va-gl
+    #   vaapiVdpau
+    # ];
   };
 
   networking = {
@@ -70,6 +61,7 @@ in {
   services.zfs.autoScrub = {
     enable = true;
     pools = [ "rpool" ];
+    interval = "weekly";
   };
 
   services.xserver = {
@@ -129,13 +121,13 @@ in {
   ];
 
   environment = {
-    variables = {
-      VDPAU_DRIVER = "va_gl";
-    };
+    # variables = {
+    #   VDPAU_DRIVER = "va_gl";
+    # };
     sessionVariables = {
       EDITOR = "nvim";
       XCURSOR_THEME = "Adwaita";
-      VDPAU_DRIVER = "va_gl";
+      # VDPAU_DRIVER = "va_gl";
     };
     systemPackages = with pkgs; [
       # nheko

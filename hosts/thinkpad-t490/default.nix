@@ -27,9 +27,11 @@ in nixpkgs.lib.nixosSystem {
       _module.args.disks = [ "/dev/nvme0n1" ];
       _module.args.mainPool = "rpool";
     }
+
+    ./hardware-configuration.nix
+    nixos-hardware.nixosModules.lenovo-thinkpad-t490
+
     home-manager.nixosModules.home-manager
     ./configuration.nix
-    nixos-hardware.nixosModules.common-pc-laptop
-    nixos-hardware.nixosModules.common-pc-laptop-ssd
   ];
 }
