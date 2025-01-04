@@ -22,16 +22,6 @@ in {
   time.timeZone = "Europe/Belgrade";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  hardware.graphics = {
-    enable = true;
-    # extraPackages = with pkgs; [
-    #   intel-media-driver
-    #   intel-vaapi-driver
-    #   libvdpau-va-gl
-    #   vaapiVdpau
-    # ];
-  };
-
   networking = {
     hostName = "thinkpad-t490";
     hostId = "30aec81d";
@@ -121,13 +111,9 @@ in {
   ];
 
   environment = {
-    # variables = {
-    #   VDPAU_DRIVER = "va_gl";
-    # };
     sessionVariables = {
       EDITOR = "nvim";
       XCURSOR_THEME = "Adwaita";
-      # VDPAU_DRIVER = "va_gl";
     };
     systemPackages = with pkgs; [
       # nheko
