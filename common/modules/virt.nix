@@ -9,8 +9,6 @@
   users = {
     # Add user to libvirtd group
     users.mateja.extraGroups = [ "libvirtd" ];
-    # VirtualBox group members
-    extraGroups.vboxusers.members = [ "mateja" ];
   };
 
   # Install necessary packages
@@ -35,7 +33,6 @@
         ovmf.packages = [ pkgs.OVMFFull.fd ];
       };
     };
-    virtualbox.host.enable = true;
     spiceUSBRedirection.enable = true;
   };
 
