@@ -13,6 +13,7 @@
   gnumake
   grpcurl
   haskell-language-server
+  hledger
   htop
   httpie
   jq
