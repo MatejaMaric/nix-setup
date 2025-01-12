@@ -28,6 +28,7 @@
   protobuf
   protoc-gen-go
   protoc-gen-go-grpc
+  python313
   rustc
   tmux
   transmission_3-gtk
