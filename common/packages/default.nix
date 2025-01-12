@@ -29,7 +29,7 @@
   protoc-gen-go
   protoc-gen-go-grpc
   python312
-  python312Packages.dateutils
+  python312Packages.python-dateutil
   rustc
   tmux
   transmission_3-gtk
