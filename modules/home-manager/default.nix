@@ -3,6 +3,7 @@
   home.packages = [];
   home.sessionVariables = {
     EDITOR = "nvim";
+    LEDGER_FILE = "~/Documents/gnucash/potrosnja.hledger";
   };
 
   programs = {
