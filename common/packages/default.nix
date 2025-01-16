@@ -5,6 +5,7 @@
   buf
   cmake
   elmPackages.elm
+  feh
   ffmpeg
   fswatch
   gh
@@ -12,11 +13,13 @@
   git
   git-filter-repo
   gnumake
+  gnuplot
   grpcurl
   haskell-language-server
   hledger
   htop
   httpie
+  imagemagick
   jq
   lf
   mpv
