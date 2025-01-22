@@ -34,7 +34,6 @@ in {
     libreoffice-bin
     mariadb
     stripe-cli
-    utm
   ] ++ (defaultPkgs { inherit pkgs pkgs-r2311 pkgs-unstable; });
 
   system.keyboard = {
