@@ -11,7 +11,7 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    darwin.url = "github:/lnl7/nix-darwin";
+    darwin.url = "github:/lnl7/nix-darwin/nix-darwin-24.11";
     darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
     home-manager.url = "github:/nix-community/home-manager/release-24.11";
