@@ -55,6 +55,8 @@
       keyMode = "vi";
       baseIndex = 1;
 
+      sensibleOnTop = false;
+
       # Neovim Stuff
       escapeTime = 10;
       terminal = "xterm-256color";
