@@ -1,5 +1,6 @@
 { pkgs, pkgs-r2311, pkgs-unstable }: with pkgs; [
   (pass.withExtensions (exts: [ exts.pass-otp ]))
+  R
   alacritty
   buf
   cmake
