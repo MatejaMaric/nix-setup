@@ -1,6 +1,6 @@
 { pkgs, pkgs-r2311, pkgs-unstable }: with pkgs; [
   (pass.withExtensions (exts: [ exts.pass-otp ]))
-  R
+  (rWrapper.override { packages = with rPackages; [ tidyverse ]; })
   alacritty
   buf
   cmake
