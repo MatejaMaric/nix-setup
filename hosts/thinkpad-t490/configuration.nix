@@ -117,6 +117,7 @@ in {
     };
     systemPackages = with pkgs; [
       # nheko
+      (rWrapper.override { packages = with rPackages; [ tidyverse ]; })
       darktable
       discord
       element-desktop
