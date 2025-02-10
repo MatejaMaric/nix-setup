@@ -4,6 +4,7 @@
   buf
   cmake
   elmPackages.elm
+  emacs
   feh
   ffmpeg
   fswatch
@@ -13,6 +14,8 @@
   git-filter-repo
   gnumake
   gnuplot
+  gocode-gomod
+  godef
   grpcurl
   haskell-language-server
   hledger

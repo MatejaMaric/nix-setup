@@ -107,7 +107,7 @@ in {
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "CommitMono" ]; })
+    (nerdfonts.override { fonts = [ "CommitMono" "SourceCodePro" ]; })
   ];
 
   environment = {
