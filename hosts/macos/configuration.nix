@@ -2,7 +2,7 @@
 let
   defaultPkgs = import ../../common/packages;
 in {
-  services.nix-daemon.enable = true;
+  nix.enable = true;
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
@@ -21,7 +21,8 @@ in {
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "CommitMono" "SourceCodePro" ]; })
+    nerd-fonts.commit-mono
+    source-code-pro
   ];
 
   environment.systemPackages = with pkgs; [
