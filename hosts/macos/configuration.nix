@@ -27,6 +27,7 @@ in {
 
   environment.systemPackages = with pkgs; [
     awscli
+    claude-code
     coreutils
     gnupg
     iterm2

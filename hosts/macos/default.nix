@@ -3,6 +3,9 @@ let
   system = "aarch64-darwin";
   nixpkgsConfig = {
     inherit system;
+    config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
+      "claude-code"
+    ];
   };
 in darwin.lib.darwinSystem {
   inherit system;
