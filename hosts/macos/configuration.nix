@@ -27,7 +27,6 @@ in {
 
   environment.systemPackages = with pkgs; [
     awscli
-    claude-code
     coreutils
     gnupg
     iterm2
@@ -35,6 +34,7 @@ in {
     kubectl
     libreoffice-bin
     mariadb
+    pkgs-unstable.claude-code
     stripe-cli
   ] ++ (defaultPkgs { inherit pkgs pkgs-r2311 pkgs-unstable; });
 
