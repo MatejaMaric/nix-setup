@@ -31,6 +31,7 @@
       # Workaround: cannot import 'zroot': I/O error in disko tests
       options.cachefile = "none";
       rootFsOptions = {
+        mountpoint = "none";
         compression = "zstd";
       };
       postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^${mainPool}@blank$' || zfs snapshot -r ${mainPool}@blank";
