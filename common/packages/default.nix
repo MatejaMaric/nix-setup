@@ -19,6 +19,9 @@
   grpcurl
   haskell-language-server
   hledger
+  hledger-iadd
+  hledger-ui
+  hledger-web
   htop
   httpie
   imagemagick
