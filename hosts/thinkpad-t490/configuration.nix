@@ -132,6 +132,7 @@ in {
       sanoid
       texliveFull
       thunderbird
+      ungoogled-chromium
       vesktop
       wl-clipboard
     ] ++ (defaultPkgs { inherit pkgs pkgs-r2311 pkgs-unstable; });
