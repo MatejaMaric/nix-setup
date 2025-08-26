@@ -8,7 +8,10 @@
 
   users = {
     # Add user to libvirtd group
-    users.mateja.extraGroups = [ "libvirtd" ];
+    users.mateja.extraGroups = [
+      "libvirtd"
+      "docker"
+    ];
   };
 
   # Install necessary packages
@@ -34,6 +37,9 @@
       };
     };
     spiceUSBRedirection.enable = true;
+    docker = {
+      enable = true;
+    };
   };
 
   services.spice-vdagentd.enable = true;
