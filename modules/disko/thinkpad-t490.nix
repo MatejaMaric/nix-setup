@@ -76,7 +76,7 @@
         "enc/home/multimedia/videos" = {
           type = "zfs_fs";
           options.mountpoint = "legacy";
-          mountpoint = "/home/mateja/Videos/";
+          mountpoint = "/home/mateja/Videos";
         };
       };
     };
