@@ -118,6 +118,7 @@ in {
     };
     systemPackages = with pkgs; [
       # nheko
+      (kodi.withPackages (kodiPkgs: with kodiPkgs; [ youtube ] ))
       (rWrapper.override { packages = with rPackages; [ tidyverse ]; })
       (rstudioWrapper.override{ packages = with rPackages; [ tidyverse  ]; })
       darktable
@@ -127,7 +128,6 @@ in {
       fractal
       gnucash
       hdparm
-      kodi
       libreoffice
       pinentry
       sanoid
