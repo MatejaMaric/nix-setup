@@ -78,6 +78,11 @@
           options.mountpoint = "legacy";
           mountpoint = "/home/mateja/Videos";
         };
+        "enc/home/kodi" = {
+          type = "zfs_fs";
+          options.mountpoint = "legacy";
+          mountpoint = "/home/mateja/.kodi";
+        };
       };
     };
 

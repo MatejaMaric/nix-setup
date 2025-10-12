@@ -127,6 +127,7 @@ in {
       fractal
       gnucash
       hdparm
+      kodi
       libreoffice
       pinentry
       sanoid
