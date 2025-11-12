@@ -7,7 +7,7 @@ let
     config = {
       allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
         "discord"
-        "winbox"
+        "winbox4"
       ];
       permittedInsecurePackages = [
         # "olm-3.2.16"

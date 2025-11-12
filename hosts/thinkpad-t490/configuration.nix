@@ -135,7 +135,7 @@ in {
       thunderbird
       ungoogled-chromium
       vesktop
-      winbox
+      winbox4
       wl-clipboard
     ] ++ (defaultPkgs { inherit pkgs pkgs-r2311 pkgs-unstable; });
   };
