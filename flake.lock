@@ -138,48 +138,16 @@
     },
     "nixpkgs-darwin": {
       "locked": {
-        "lastModified": 1765855791,
-        "narHash": "sha256-WHSSamtQ323siJNg5qX5er0BRyPWvNjFqnBoyNSDF0Q=",
+        "lastModified": 1765945985,
+        "narHash": "sha256-duJghHCT45Q6xQGw+H1qXcMiVz0mQjBMq83FETGm9yY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "276741e17d9a6dea89ee46d6954ace8a156f0c28",
+        "rev": "bc80944f6858c39d5cd06cbae1088a7f79924b41",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "ref": "nixpkgs-25.05-darwin",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-darwin-r2311": {
-      "locked": {
-        "lastModified": 1719957072,
-        "narHash": "sha256-gvFhEf5nszouwLAkT9nWsDzocUTqLWHuL++dvNjMp9I=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "7144d6241f02d171d25fba3edeaf15e0f2592105",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-23.11-darwin",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-r2311": {
-      "locked": {
-        "lastModified": 1720535198,
-        "narHash": "sha256-zwVvxrdIzralnSbcpghA92tWu2DV2lwv89xZc8MTrbg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "205fd4226592cc83fd4c0885a3e4c9c400efabb5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-23.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -209,8 +177,6 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-darwin": "nixpkgs-darwin",
-        "nixpkgs-darwin-r2311": "nixpkgs-darwin-r2311",
-        "nixpkgs-r2311": "nixpkgs-r2311",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "yotaLaravel": "yotaLaravel"
       }

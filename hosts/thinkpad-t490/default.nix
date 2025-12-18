@@ -1,5 +1,5 @@
 
-{nixpkgs, nixpkgs-r2311, nixpkgs-unstable, home-manager, nixos-hardware, disko, ...}:
+{nixpkgs, nixpkgs-unstable, home-manager, nixos-hardware, disko, ...}:
 let
   system = "x86_64-linux";
   nixpkgsConfig = {
@@ -11,6 +11,7 @@ let
       ];
       permittedInsecurePackages = [
         # "olm-3.2.16"
+        "electron-36.9.5" # used by RStudio
       ];
     };
   };
@@ -18,7 +19,6 @@ in nixpkgs.lib.nixosSystem {
   inherit system;
   pkgs = import nixpkgs nixpkgsConfig;
   specialArgs = {
-    pkgs-r2311 = import nixpkgs-r2311 nixpkgsConfig;
     pkgs-unstable = import nixpkgs-unstable nixpkgsConfig;
   };
   modules = [

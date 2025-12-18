@@ -1,6 +1,6 @@
 # See available options: man 5 configuration.nix
 # Open NixOS manual: nixos-help
-{ config, lib, pkgs, pkgs-r2311, pkgs-unstable, ... }:
+{ config, lib, pkgs, pkgs-unstable, ... }:
 let
   defaultPkgs = import ../../common/packages;
 in {
@@ -142,7 +142,7 @@ in {
       winbox4
       wl-clipboard
       xournalpp
-    ] ++ (defaultPkgs { inherit pkgs pkgs-r2311 pkgs-unstable; });
+    ] ++ (defaultPkgs { inherit pkgs pkgs-unstable; });
   };
 
 

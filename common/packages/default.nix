@@ -1,4 +1,4 @@
-{ pkgs, pkgs-r2311, pkgs-unstable }: with pkgs; [
+{ pkgs, pkgs-unstable }: with pkgs; [
   (pass.withExtensions (exts: [ exts.pass-otp ]))
   alacritty
   buf
@@ -32,7 +32,6 @@
   nil
   nodejs_22
   pciutils
-  pkgs-r2311.lunarvim
   pkgs-unstable.go
   protobuf
   protoc-gen-go
