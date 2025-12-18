@@ -73,6 +73,8 @@ in {
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  # Enable support for SANE scanners
+  hardware.sane.enable = true;
 
   # Enable sound with pipewire.
   security.rtkit.enable = true;
@@ -96,7 +98,7 @@ in {
       home = "/home/mateja";
       createHome = true;
       initialHashedPassword = "$y$j9T$7Y49sohFcg3U6XxNq3p8o.$mxii.YiAu0KBEH3oCtxuFoDUJIM.pA4uKy0TWmvP0B1";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "scanner" ];
     };
   };
 
@@ -128,6 +130,8 @@ in {
       fractal
       gnucash
       hdparm
+      inkscape
+      kdePackages.okular
       libreoffice
       pinentry
       sanoid
@@ -137,6 +141,7 @@ in {
       vesktop
       winbox4
       wl-clipboard
+      xournalpp
     ] ++ (defaultPkgs { inherit pkgs pkgs-r2311 pkgs-unstable; });
   };
 
