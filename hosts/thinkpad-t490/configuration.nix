@@ -56,19 +56,20 @@ in {
 
   services.xserver = {
     enable = true;
-    displayManager.gdm = {
-      enable = true;
-      debug = true;
-    };
-    desktopManager.gnome = {
-      enable = true;
-      debug = true;
-    };
     xkb = {
       layout = "us";
       variant = "";
     };
     # libinput.enable = true; # Enable touchpad support (enabled default in most desktopManager).
+  };
+
+  services.displayManager.gdm = {
+    enable = true;
+    debug = true;
+  };
+  services.desktopManager.gnome = {
+    enable = true;
+    debug = true;
   };
 
   # Enable CUPS to print documents.
@@ -133,7 +134,7 @@ in {
       inkscape
       kdePackages.okular
       libreoffice
-      pinentry
+      pinentry-curses
       sanoid
       texliveFull
       thunderbird

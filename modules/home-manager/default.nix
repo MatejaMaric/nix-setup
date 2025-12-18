@@ -68,13 +68,15 @@
 
     git = {
       enable = true;
-      userName = "Mateja";
-      userEmail = "mail@matejamaric.com";
       signing = {
         key = "8E2B38CBE4246E2B";
         signByDefault = true;
       };
-      extraConfig = {
+      settings = {
+        user = {
+          name = "Mateja";
+          email = "mail@matejamaric.com";
+        };
         init = {
           defaultBranch = "main";
         };

@@ -21,7 +21,7 @@
     spice
     spice-gtk
     spice-protocol
-    win-virtio
+    virtio-win
     win-spice
     # gnome.adwaita-icon-theme # needed only if you don't have gnome installed
   ];

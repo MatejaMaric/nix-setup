@@ -40,7 +40,7 @@
   python312Packages.pip
   rustc
   tmux
-  transmission_3-gtk
+  transmission_4-gtk
   tree
   unzip
   wget
