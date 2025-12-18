@@ -11,7 +11,7 @@ let
       ];
       permittedInsecurePackages = [
         # "olm-3.2.16"
-        "electron-36.9.5" # used by RStudio
+        # "electron-36.9.5" # used by RStudio
       ];
     };
   };
