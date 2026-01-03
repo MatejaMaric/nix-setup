@@ -86,7 +86,7 @@ in {
       cups-filters
       cups-browsed
     ];
-};
+  };
 
   # Enable support for SANE scanners
   hardware.sane.enable = true;
@@ -136,13 +136,15 @@ in {
     systemPackages = with pkgs; [
       # nheko
       (kodi.withPackages (kodiPkgs: with kodiPkgs; [ youtube ] ))
-      (rWrapper.override { packages = with rPackages; [ tidyverse ]; })
-      (rstudioWrapper.override{ packages = with rPackages; [ tidyverse  ]; })
+      (rWrapper.override { packages = with rPackages; [ tidyverse gtExtras ]; })
+      (rstudioWrapper.override{ packages = with rPackages; [ tidyverse gtExtras ]; })
       darktable
       discord
+      electrum
       element-desktop
       firefox
       fractal
+      gcc
       gnucash
       hdparm
       inkscape
