@@ -150,6 +150,7 @@ in {
       inkscape
       kdePackages.okular
       libreoffice
+      pandoc
       pinentry-curses
       sanoid
       texliveFull
