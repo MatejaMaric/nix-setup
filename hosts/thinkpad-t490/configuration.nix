@@ -37,10 +37,10 @@ in {
   };
 
   systemd = {
-    services = {
-      "getty@tty1".enable = false;
-      "autovt@tty1".enable = false;
-    };
+    # services = {
+    #   "getty@tty1".enable = false;
+    #   "autovt@tty1".enable = false;
+    # };
     # targets = {
     #   network-online.enable = lib.mkForce false;
     # };
@@ -65,11 +65,11 @@ in {
 
   services.displayManager.gdm = {
     enable = true;
-    debug = true;
+    # debug = true;
   };
   services.desktopManager.gnome = {
     enable = true;
-    debug = true;
+    # debug = true;
   };
 
   # Enable auto-discovery of network printers
@@ -136,8 +136,8 @@ in {
     systemPackages = with pkgs; [
       # nheko
       (kodi.withPackages (kodiPkgs: with kodiPkgs; [ youtube ] ))
-      (rWrapper.override { packages = with rPackages; [ tidyverse gtExtras ]; })
-      (rstudioWrapper.override{ packages = with rPackages; [ tidyverse gtExtras ]; })
+      (rWrapper.override { packages = with rPackages; [ tidyverse gtExtras webshot2 ]; })
+      (rstudioWrapper.override{ packages = with rPackages; [ tidyverse gtExtras webshot2 ]; })
       darktable
       discord
       electrum
