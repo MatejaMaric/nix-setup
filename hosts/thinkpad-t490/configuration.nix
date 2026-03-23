@@ -156,12 +156,16 @@ in {
       texliveFull
       thunderbird
       ungoogled-chromium
+      pcsclite
+      pkg-config
+      fyne
       vesktop
       winbox4
       wl-clipboard
       xournalpp
     ] ++ (defaultPkgs { inherit pkgs pkgs-unstable; });
   };
+  services.pcscd.enable = true;
 
 
   # Some programs need SUID wrappers, can be configured further or are
