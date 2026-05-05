@@ -113,7 +113,7 @@ in {
       home = "/home/mateja";
       createHome = true;
       initialHashedPassword = "$y$j9T$7Y49sohFcg3U6XxNq3p8o.$mxii.YiAu0KBEH3oCtxuFoDUJIM.pA4uKy0TWmvP0B1";
-      extraGroups = [ "networkmanager" "wheel" "scanner" ];
+      extraGroups = [ "networkmanager" "wheel" "scanner" "dialout" ];
     };
   };
 
@@ -144,6 +144,7 @@ in {
       element-desktop
       firefox
       fractal
+      fyne
       gcc
       gnucash
       hdparm
@@ -151,14 +152,14 @@ in {
       kdePackages.okular
       libreoffice
       pandoc
+      pcsclite
       pinentry-curses
+      pkg-config
       sanoid
       texliveFull
+      thonny
       thunderbird
       ungoogled-chromium
-      pcsclite
-      pkg-config
-      fyne
       vesktop
       winbox4
       wl-clipboard
