@@ -14,6 +14,7 @@ let
         # "electron-36.9.5" # used by RStudio
         # "electron-37.10.3"
         "electron-38.8.4"
+        "docker-28.5.2"
       ];
     };
   };
