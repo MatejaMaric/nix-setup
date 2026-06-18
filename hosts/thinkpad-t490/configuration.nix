@@ -144,9 +144,9 @@ in {
     };
     systemPackages = with pkgs; [
       # nheko
-      (kodi.withPackages (kodiPkgs: with kodiPkgs; [ youtube ] ))
-      (rWrapper.override { packages = with rPackages; [ tidyverse gtExtras webshot2 ]; })
-      (rstudioWrapper.override{ packages = with rPackages; [ tidyverse gtExtras webshot2 ]; })
+      # (kodi.withPackages (kodiPkgs: with kodiPkgs; [ youtube ] ))
+      # (rWrapper.override { packages = with rPackages; [ tidyverse gtExtras webshot2 ]; })
+      # (rstudioWrapper.override{ packages = with rPackages; [ tidyverse gtExtras webshot2 ]; })
       darktable
       discord
       electrum

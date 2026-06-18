@@ -36,8 +36,8 @@
   protobuf
   protoc-gen-go
   protoc-gen-go-grpc
-  python312
-  python312Packages.pip
+  # python312
+  # python312Packages.pip
   rustc
   tmux
   transmission_4-gtk
