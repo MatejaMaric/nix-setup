@@ -143,10 +143,10 @@ in {
       XCURSOR_THEME = "Adwaita";
     };
     systemPackages = with pkgs; [
-      # nheko
       # (kodi.withPackages (kodiPkgs: with kodiPkgs; [ youtube ] ))
       # (rWrapper.override { packages = with rPackages; [ tidyverse gtExtras webshot2 ]; })
       # (rstudioWrapper.override{ packages = with rPackages; [ tidyverse gtExtras webshot2 ]; })
+      # nheko
       darktable
       discord
       electrum
@@ -172,6 +172,7 @@ in {
       vesktop
       winbox4
       wl-clipboard
+      xca
       xournalpp
     ] ++ (defaultPkgs { inherit pkgs pkgs-unstable; });
   };
