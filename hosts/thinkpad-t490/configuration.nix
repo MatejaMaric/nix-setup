@@ -17,6 +17,8 @@ in {
     };
     supportedFilesystems = [ "zfs" ];
     zfs.forceImportRoot = false;
+    extraModulePackages = [config.boot.kernelPackages.ddcci-driver];
+    kernelModules = ["i2c-dev" "ddcci_backlight"];
   };
 
   time.timeZone = "Europe/Belgrade";
@@ -105,7 +107,7 @@ in {
 
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = false;
+    powerOnBoot = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -148,6 +150,8 @@ in {
       # (rstudioWrapper.override{ packages = with rPackages; [ tidyverse gtExtras webshot2 ]; })
       # nheko
       darktable
+      ddcui
+      ddcutil
       discord
       electrum
       element-desktop
