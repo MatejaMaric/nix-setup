@@ -168,12 +168,14 @@ in {
       pcsclite
       pinentry-curses
       pkg-config
+      qmk
       sanoid
       texliveFull
       thonny
       thunderbird
       ungoogled-chromium
       vesktop
+      via
       winbox4
       wl-clipboard
       xca
