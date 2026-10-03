@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:/NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:/NixOS/nixpkgs/nixpkgs-unstable";
-
     nixpkgs-darwin.url = "github:/NixOS/nixpkgs/nixpkgs-26.05-darwin";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -23,6 +22,9 @@
 
     yotaLaravel.url = "github:/MatejaMaric/yota-laravel";
     yotaLaravel.inputs.nixpkgs.follows = "nixpkgs";
+
+    openlogi.url = "github:AprilNEA/OpenLogi";
+    openlogi.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs = inputs:
