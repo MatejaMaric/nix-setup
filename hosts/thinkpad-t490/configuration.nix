@@ -170,12 +170,12 @@ in {
       pkg-config
       qmk
       sanoid
+      solaar
       texliveFull
       thonny
       thunderbird
       ungoogled-chromium
       vesktop
-      via
       winbox4
       wl-clipboard
       xca
