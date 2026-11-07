@@ -165,6 +165,7 @@ in {
       fractal
       fyne
       gcc
+      ghidra
       gnucash
       hdparm
       inkscape
@@ -172,6 +173,7 @@ in {
       libreoffice
       pandoc
       pcsclite
+      pi-coding-agent
       pinentry-curses
       pkg-config
       qmk
