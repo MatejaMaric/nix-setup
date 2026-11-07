@@ -126,6 +126,12 @@ in {
         "wheel"
       ];
     };
+    users.low-privilege = {
+      createHome = true;
+      description = "Low Privilege";
+      home = "/home/low-privilege";
+      isNormalUser = true;
+    };
   };
 
   home-manager = {
