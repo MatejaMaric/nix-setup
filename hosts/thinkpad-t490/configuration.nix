@@ -168,6 +168,7 @@ in {
       gcc
       ghidra
       gnucash
+      guestfs-tools
       hdparm
       inkscape
       kdePackages.okular
