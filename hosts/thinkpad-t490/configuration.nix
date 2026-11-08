@@ -171,6 +171,7 @@ in {
       hdparm
       inkscape
       kdePackages.okular
+      libguestfs-with-appliance
       libreoffice
       pandoc
       pcsclite
