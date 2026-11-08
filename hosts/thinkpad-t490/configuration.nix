@@ -155,6 +155,7 @@ in {
       # (rWrapper.override { packages = with rPackages; [ tidyverse gtExtras webshot2 ]; })
       # (rstudioWrapper.override{ packages = with rPackages; [ tidyverse gtExtras webshot2 ]; })
       # nheko
+      claude-code
       darktable
       ddcui
       ddcutil
