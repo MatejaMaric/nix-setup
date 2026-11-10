@@ -23,7 +23,7 @@
     yotaLaravel.url = "github:/MatejaMaric/yota-laravel";
     yotaLaravel.inputs.nixpkgs.follows = "nixpkgs";
 
-    openlogi.url = "github:AprilNEA/OpenLogi";
+    openlogi.url = "github:AprilNEA/OpenLogi/98d60ca7b34b7e9b3fe7975ae11dff223b634c8e?dir=packaging";
     openlogi.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
