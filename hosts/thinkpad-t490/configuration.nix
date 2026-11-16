@@ -206,8 +206,6 @@ in {
     enableSSHSupport = true;
   };
 
-  programs.openlogi.enable = true;
-
   services.openssh = {
     enable = true;
     # settings.PasswordAuthentication = false;

@@ -1,5 +1,5 @@
 
-{nixpkgs, nixpkgs-unstable, home-manager, nixos-hardware, disko, openlogi, ...}:
+{nixpkgs, nixpkgs-unstable, home-manager, nixos-hardware, disko, ...}:
 let
   system = "x86_64-linux";
   nixpkgsConfig = {
@@ -35,8 +35,6 @@ in nixpkgs.lib.nixosSystem {
 
     ./hardware-configuration.nix
     nixos-hardware.nixosModules.lenovo-thinkpad-t490
-
-    openlogi.nixosModules.default
 
     home-manager.nixosModules.home-manager
     ./configuration.nix
