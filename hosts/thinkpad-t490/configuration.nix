@@ -178,6 +178,7 @@ in {
       pinentry-curses
       pkg-config
       pkgs-unstable.claude-code
+      pkgs-unstable.openlogi
       pkgs-unstable.pi-coding-agent
       pkgs-unstable.super-productivity
       qmk
