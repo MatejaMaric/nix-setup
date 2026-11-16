@@ -175,10 +175,11 @@ in {
       libreoffice
       pandoc
       pcsclite
-      pi-coding-agent
       pinentry-curses
       pkg-config
       pkgs-unstable.claude-code
+      pkgs-unstable.pi-coding-agent
+      pkgs-unstable.super-productivity
       qmk
       sanoid
       solaar
